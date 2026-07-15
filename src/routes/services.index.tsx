@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-aerial.jpg";
 import { CtaBlock } from "@/components/cta-block";
 import { ArrowUpRight } from "lucide-react";
 
-export const Route = createFileRoute("/services")({
+export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
       { title: "Services — Anchorfield Buyer's Advocacy" },
