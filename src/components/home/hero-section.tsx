@@ -4,17 +4,17 @@ import heroImage from "@/assets/hero-melbourne.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
+    <section className="relative isolate bg-midnight min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
       {/* Backdrop imagery */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <img
           src={heroImage}
-          alt="Melbourne skyline at dusk"
+          alt=""
           fetchPriority="high"
           className="w-full h-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/70 via-midnight/40 to-midnight" />
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/35 via-midnight/15 to-midnight/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-midnight/15 to-transparent" />
       </div>
 
       <div className="container-editorial relative z-10 grid lg:grid-cols-12 gap-8 items-end">

@@ -21,27 +21,27 @@ export function PageHero({
   imagePosition = "center",
 }: Props) {
   return (
-    <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
+    <section className="relative isolate bg-midnight pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
       {/* Background image + cinematic overlays */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <img
           src={backgroundImage}
-          alt={imageAlt}
-          aria-hidden={imageAlt === "" ? "true" : undefined}
+          alt=""
+          fetchPriority="high"
           width={1920}
           height={1080}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-95"
           style={{ objectPosition: imagePosition }}
         />
         {/* Vertical fade so headline stays legible without hiding the image */}
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/40 via-midnight/30 to-midnight" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/20 via-midnight/10 to-midnight/80" />
         {/* Left vignette holds copy against imagery */}
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/85 via-midnight/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-midnight/25 to-transparent" />
         {/* Copper glow accent */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.05] blur-[120px]" />
       </div>
 
-      <div className="container-editorial relative">
+      <div className="container-editorial relative z-10">
         <div className="flex items-center gap-4 mb-8 animate-fade">
           <div className="w-px h-10 bg-copper animate-line-draw" />
           <span className="text-eyebrow">{eyebrow}</span>
