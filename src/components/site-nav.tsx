@@ -159,7 +159,7 @@ export function SiteNav() {
                           className="opacity-60 transition-transform duration-300 group-data-[state=open]:rotate-180"
                         />
                       </NavigationMenu.Trigger>
-                      <NavigationMenu.Content className="absolute left-0 right-0 top-full data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
+                      <NavigationMenu.Content className="w-screen data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
                         <MegaMenu item={item} />
                       </NavigationMenu.Content>
                     </>
