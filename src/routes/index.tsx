@@ -1,24 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { HeroSection } from "@/components/home/hero-section";
+import { StatsRibbon } from "@/components/home/stats-ribbon";
+import { TrustStrip } from "@/components/home/trust-strip";
+import { WhyBuyersLose } from "@/components/home/why-buyers-lose";
+import { ServicesGrid } from "@/components/home/services-grid";
+import { ProcessTimeline } from "@/components/home/process-timeline";
+import { ComparisonTable } from "@/components/home/comparison-table";
+import { FeaturedAreas } from "@/components/home/featured-areas";
+import { FounderSection } from "@/components/home/founder-section";
+import { InsightsSection } from "@/components/home/insights-section";
+import { TestimonialsSection } from "@/components/home/testimonials-section";
+import { FaqAccordion } from "@/components/home/faq-accordion";
+import { CtaBlock } from "@/components/cta-block";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <HeroSection />
+      <StatsRibbon />
+      <TrustStrip />
+      <WhyBuyersLose />
+      <ServicesGrid />
+      <ProcessTimeline />
+      <ComparisonTable />
+      <FeaturedAreas />
+      <FounderSection />
+      <InsightsSection />
+      <TestimonialsSection />
+      <FaqAccordion />
+      <CtaBlock />
+    </>
   );
 }
