@@ -107,7 +107,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-dvh bg-background text-foreground">
         <SiteNav />
-        <main>
+        <main id="main-content" tabIndex={-1}>
           <Outlet />
         </main>
         <SiteFooter />
