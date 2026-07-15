@@ -297,7 +297,7 @@ function MegaMenu({ item }: { item: NavItem }) {
           {item.columns!.map((col) => (
             <div
               key={col.heading}
-              className={`col-span-${Math.max(3, Math.floor(9 / item.columns!.length))}`}
+              className={item.columns!.length === 3 ? "col-span-3" : "col-span-4"}
             >
               <div className="font-mono-brand text-[10px] tracking-widest text-paper/40 uppercase mb-4">
                 {col.heading}
