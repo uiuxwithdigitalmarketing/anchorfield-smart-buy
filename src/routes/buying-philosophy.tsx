@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-philosophy.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
+import heroBg from "@/assets/hero-interior.jpg";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBlock } from "@/components/cta-block";
 
@@ -13,7 +12,7 @@ export const Route = createFileRoute("/buying-philosophy")({
       { property: "og:title", content: "Our Buying Philosophy — Anchorfield" },
       { property: "og:description", content: "Buy like a bank. Financial rigor applied to every acquisition." },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/buying-philosophy" }],
+    links: [{ rel: "canonical", href: "/buying-philosophy" }],
   }),
   component: Page,
 });
@@ -28,7 +27,7 @@ const PILLARS = [
 function Page() {
   return (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero backgroundImage={heroBg}
         eyebrow="About / Philosophy"
         chapter="(03) FIRST PRINCIPLES"
         title={<>Buy like a <span className="italic text-copper">bank,</span> not a bidder.</>}

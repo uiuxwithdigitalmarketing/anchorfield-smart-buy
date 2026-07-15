@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-services.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
+import heroBg from "@/assets/hero-aerial.jpg";
 import { CtaBlock } from "@/components/cta-block";
 import { ArrowUpRight } from "lucide-react";
 
@@ -13,7 +12,7 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Anchorfield Services" },
       { property: "og:url", content: "/services" },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "/services" }],
   }),
   component: Services,
 });
@@ -52,7 +51,7 @@ const GROUPS = [
 function Services() {
   return (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero backgroundImage={heroBg}
         eyebrow="Services / Full scope"
         chapter="(02) CORE COMPETENCIES"
         title={

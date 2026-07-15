@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-whyus.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
 import { ComparisonTable } from "@/components/home/comparison-table";
 import { WhyBuyersLose } from "@/components/home/why-buyers-lose";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
@@ -15,11 +13,11 @@ export const Route = createFileRoute("/why-us")({
       { property: "og:title", content: "Why Anchorfield" },
       { property: "og:url", content: "/why-us" },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/why-us" }],
+    links: [{ rel: "canonical", href: "/why-us" }],
   }),
   component: () => (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero
         eyebrow="Why Us / The Advantage"
         chapter="(04) THE DIFFERENCE"
         title={<>Why <span className="italic text-copper">Anchorfield.</span></>}

@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-about.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
+import heroBg from "@/assets/hero-interior.jpg";
 import { FounderSection } from "@/components/home/founder-section";
 import { CtaBlock } from "@/components/cta-block";
 import { TrustStrip } from "@/components/home/trust-strip";
@@ -15,7 +14,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: "Financial-grade buyer's advocacy for discerning Australian buyers." },
       { property: "og:url", content: "/about" },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "/about" }],
   }),
   component: About,
 });
@@ -30,7 +29,7 @@ const VALUES = [
 function About() {
   return (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero backgroundImage={heroBg}
         eyebrow="About / The Firm"
         chapter="EST. 2024 — MELBOURNE"
         title={

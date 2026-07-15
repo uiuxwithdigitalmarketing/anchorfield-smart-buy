@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-founder-bg.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
+import heroBg from "@/assets/hero-interior.jpg";
 import { FounderSection } from "@/components/home/founder-section";
 import { CtaBlock } from "@/components/cta-block";
 
@@ -13,7 +12,7 @@ export const Route = createFileRoute("/meet-the-founder")({
       { property: "og:title", content: "Meet the Founder — Anchorfield" },
       { property: "og:description", content: "Mortgage broker turned buyer's advocate. The story behind Anchorfield." },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/meet-the-founder" }],
+    links: [{ rel: "canonical", href: "/meet-the-founder" }],
   }),
   component: Page,
 });
@@ -21,7 +20,7 @@ export const Route = createFileRoute("/meet-the-founder")({
 function Page() {
   return (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero backgroundImage={heroBg}
         eyebrow="About / Founder"
         chapter="(01) THE PRINCIPAL"
         title={<>A mortgage broker who <span className="italic text-copper">refused to sell.</span></>}

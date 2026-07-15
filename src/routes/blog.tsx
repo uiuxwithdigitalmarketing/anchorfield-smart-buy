@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroPicture from "@/assets/hero-blog.jpg?hero";
-import { heroPreloadLink } from "@/components/hero-image";
 import { ArrowUpRight } from "lucide-react";
 
 const POSTS = [
@@ -20,11 +18,11 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: "Quarterly market reports, investment analysis, and practical guides from Australia's financial-grade buyer's advocacy." },
       { property: "og:url", content: "/blog" },
     ],
-    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/blog" }],
+    links: [{ rel: "canonical", href: "/blog" }],
   }),
   component: () => (
     <>
-      <PageHero picture={heroPicture}
+      <PageHero
         eyebrow="Insights / Journal"
         chapter="(07) INTELLIGENCE"
         title={<>The Anchorfield <span className="italic text-copper">journal.</span></>}

@@ -2,26 +2,6 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { CtaBlock } from "@/components/cta-block";
 import { Check } from "lucide-react";
-import { heroPreloadLink, type PictureSource } from "@/components/hero-image";
-import heroArchitecture from "@/assets/hero-architecture.jpg?hero";
-import heroFounder from "@/assets/hero-founder-bg.jpg?hero";
-import heroMortgage from "@/assets/hero-mortgage.jpg?hero";
-import heroAbout from "@/assets/hero-about.jpg?hero";
-import heroServices from "@/assets/hero-services.jpg?hero";
-import heroPhilosophy from "@/assets/hero-philosophy.jpg?hero";
-import heroFaqs from "@/assets/hero-faqs.jpg?hero";
-import heroWhyus from "@/assets/hero-whyus.jpg?hero";
-
-const SLUG_HERO: Record<string, PictureSource> = {
-  "buyers-advocacy": heroArchitecture,
-  "off-market": heroFounder,
-  "auction-bidding": heroMortgage,
-  "negotiation": heroAbout,
-  "investment-advisory": heroServices,
-  "portfolio-strategy": heroPhilosophy,
-  "property-research": heroFaqs,
-  "vendor-advocacy": heroWhyus,
-};
 
 const SERVICE_DATA: Record<string, {
   eyebrow: string;
@@ -227,10 +207,7 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: `Anchorfield — ${params.slug}` },
         { property: "og:url", content: `/services/${params.slug}` },
       ],
-      links: [
-        ...(SLUG_HERO[params.slug] ? [heroPreloadLink(SLUG_HERO[params.slug])] : []),
-        { rel: "canonical", href: `/services/${params.slug}` },
-      ],
+      links: [{ rel: "canonical", href: `/services/${params.slug}` }],
     };
   },
   component: ServiceDetail,
@@ -244,10 +221,10 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetail() {
-  const { data, slug } = Route.useLoaderData();
+  const { data } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} picture={SLUG_HERO[slug]} />
+      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
 
       <section className="py-24 border-t border-white/5">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
