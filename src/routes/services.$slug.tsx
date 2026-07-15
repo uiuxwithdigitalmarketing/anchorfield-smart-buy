@@ -227,7 +227,10 @@ export const Route = createFileRoute("/services/$slug")({
         { property: "og:title", content: `Anchorfield — ${params.slug}` },
         { property: "og:url", content: `/services/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/services/${params.slug}` }],
+      links: [
+        ...(SLUG_HERO[params.slug] ? [heroPreloadLink(SLUG_HERO[params.slug])] : []),
+        { rel: "canonical", href: `/services/${params.slug}` },
+      ],
     };
   },
   component: ServiceDetail,
