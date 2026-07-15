@@ -135,12 +135,22 @@ export function SiteNav() {
             delayDuration={100}
           >
             <NavigationMenu.List className="flex items-center gap-2">
-              {NAV.map((item) => (
+              {NAV.map((item) => {
+                const sectionActive =
+                  pathname === item.to ||
+                  item.columns?.some((c) =>
+                    c.items.some((i) => pathname === resolveHref(i.to, i.params)),
+                  ) ||
+                  (item.to !== "/" && pathname.startsWith(item.to + "/"));
+                return (
                 <NavigationMenu.Item key={item.label}>
                   {item.columns ? (
                     <>
                       <NavigationMenu.Trigger
-                        className="group inline-flex items-center gap-1 px-3 py-2 text-[12px] font-medium uppercase tracking-[0.2em] text-paper/70 hover:text-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm data-[state=open]:text-copper"
+                        className={`group inline-flex items-center gap-1 px-3 py-2 text-[12px] font-medium uppercase tracking-[0.2em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm data-[state=open]:text-copper ${
+                          sectionActive ? "text-copper" : "text-paper/70 hover:text-paper"
+                        }`}
+                        aria-current={sectionActive ? "page" : undefined}
                       >
                         {item.label}
                         <ChevronDown
@@ -153,6 +163,7 @@ export function SiteNav() {
                         <MegaMenu item={item} />
                       </NavigationMenu.Content>
                     </>
+
                   ) : (
                     <NavigationMenu.Link asChild>
                       <Link
