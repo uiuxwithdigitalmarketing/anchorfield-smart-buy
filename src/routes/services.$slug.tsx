@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 
 const SERVICE_DATA: Record<string, {
   eyebrow: string;
-  title: React.ReactNode;
+  title: { lead: string; accent: string };
   intro: string;
   overview: string;
   benefits: string[];
@@ -14,7 +14,7 @@ const SERVICE_DATA: Record<string, {
 }> = {
   "buyers-advocacy": {
     eyebrow: "Service / 01",
-    title: <>Full <span className="italic text-copper">buyers advocacy.</span></>,
+    title: { lead: "Full", accent: "buyers advocacy." },
     intro: "Our flagship engagement. End-to-end search, evaluation, negotiation, and settlement — with in-house mortgage strategy woven through every stage.",
     overview: "You engage Anchorfield as your sole representative in the property transaction. From the moment we accept your brief, we act exclusively for you — sourcing on- and off-market opportunities, conducting forensic due diligence, negotiating price and terms, and coordinating settlement.",
     benefits: ["Access to on-market, pre-market, and off-market opportunities", "24-point structural, legal, and financial due diligence", "Integrated mortgage strategy — no separate broker delays", "Data-led negotiation and disciplined auction bidding", "End-to-end concierge from brief to keys in hand"],
@@ -29,7 +29,7 @@ const SERVICE_DATA: Record<string, {
   },
   "off-market": {
     eyebrow: "Service / 02",
-    title: <>Off-market <span className="italic text-copper">search.</span></>,
+    title: { lead: "Off-market", accent: "search." },
     intro: "Access the 35–40% of premium Australian stock that trades within private networks before ever reaching a public portal.",
     overview: "Off-market properties are sold discreetly for reasons of privacy, timing, or vendor preference. Our decade-plus of relationships with selling agents, developers, and private networks means we routinely surface opportunities our clients would never encounter alone.",
     benefits: ["Reduced buyer competition and negotiation pressure", "Greater vendor flexibility on price and terms", "Privacy for both buyer and seller", "Access to properties years before listing cycles"],
@@ -43,7 +43,7 @@ const SERVICE_DATA: Record<string, {
   },
   "auction-bidding": {
     eyebrow: "Service / 03",
-    title: <>Auction <span className="italic text-copper">bidding.</span></>,
+    title: { lead: "Auction", accent: "bidding." },
     intro: "The auction floor is engineered to break your budget. Our proxy representation replaces adrenaline with discipline.",
     overview: "You've found the property. You've done the work. What you need on the day is a calm, unemotional presence who understands the psychology of the room and will not exceed the ceiling you've set — even when everyone around you does.",
     benefits: ["Pre-auction due diligence and price ceiling modeling", "Strategic bidding psychology on the day", "Post-auction negotiation if property passes in", "No emotional escalation. Ever."],
@@ -56,7 +56,7 @@ const SERVICE_DATA: Record<string, {
   },
   "negotiation": {
     eyebrow: "Service / 04",
-    title: <>Property <span className="italic text-copper">negotiation.</span></>,
+    title: { lead: "Property", accent: "negotiation." },
     intro: "You've identified the property. We secure it — at the right price, on the right terms.",
     overview: "Our negotiation engagement is for buyers who've done their own search and want expert representation from the offer stage onward. Verified borrowing capacity, real-time market data, and disciplined tactics deliver measurable savings.",
     benefits: ["Verified pre-approval strengthens offer credibility", "Comparable-sales evidence anchors price discussions", "Multiple-offer, pre-auction, and silent-sale strategies", "Typical savings materially exceed engagement fee"],
@@ -69,7 +69,7 @@ const SERVICE_DATA: Record<string, {
   },
   "investment-advisory": {
     eyebrow: "Service / 05",
-    title: <>Investment <span className="italic text-copper">advisory.</span></>,
+    title: { lead: "Investment", accent: "advisory." },
     intro: "Property investment treated as portfolio construction, not transaction. Data-led, mortgage-aligned, and cycle-aware.",
     overview: "We work with investors building long-term residential wealth. Every acquisition is stress-tested against lending scenarios, cashflow modeling, growth-corridor data, and rebalancing needs — never chosen for aesthetic appeal.",
     benefits: ["Growth-corridor and yield-optimised asset selection", "Cashflow, tax, and equity-release modeling", "Integrated mortgage structuring across the portfolio", "Independent — no developer commissions, ever"],
@@ -83,7 +83,7 @@ const SERVICE_DATA: Record<string, {
   },
   "portfolio-strategy": {
     eyebrow: "Service / 06",
-    title: <>Portfolio <span className="italic text-copper">strategy.</span></>,
+    title: { lead: "Portfolio", accent: "strategy." },
     intro: "For established investors scaling from a single asset to a genuine portfolio. Strategic, structured, and mortgage-aware.",
     overview: "Portfolio strategy is a higher-order engagement for clients holding two or more investment properties and planning to scale. We treat your holdings as an integrated capital structure, not a collection of transactions.",
     benefits: ["Portfolio-wide loan structuring and equity release planning", "Cross-state diversification modeling", "Yield vs. growth rebalancing", "Long-horizon capital planning"],
@@ -96,7 +96,7 @@ const SERVICE_DATA: Record<string, {
   },
   "property-research": {
     eyebrow: "Service / 07",
-    title: <>Property <span className="italic text-copper">research.</span></>,
+    title: { lead: "Property", accent: "research." },
     intro: "Institutional-grade research on suburbs and individual assets. Data over anecdote, evidence over enthusiasm.",
     overview: "Our research engagement delivers a full written report on a suburb, a corridor, or a specific property — combining capital growth history, rental yield trends, infrastructure pipeline, and risk assessment.",
     benefits: ["Capital growth history and forward projections", "Vacancy rates and rental yield analysis", "Comparable sales and negotiation evidence", "Infrastructure and development pipeline mapping"],
@@ -109,7 +109,7 @@ const SERVICE_DATA: Record<string, {
   },
   "due-diligence": {
     eyebrow: "Service / 08",
-    title: <>Due <span className="italic text-copper">diligence.</span></>,
+    title: { lead: "Due", accent: "diligence." },
     intro: "Our 24-point forensic checklist — structural, legal, and financial — protects against the seven-figure mistakes buyers routinely make.",
     overview: "Standard building and pest inspections are a minimum, not a discipline. Our due diligence engagement adds title verification, zoning and overlay analysis, comparable-sales modeling, and cashflow feasibility.",
     benefits: ["Structural, pest, and building integrity coordination", "Legal, title, easement, and covenant verification", "Zoning, flood, and bushfire overlay analysis", "Market value benchmarking with comparable sales"],
@@ -122,7 +122,7 @@ const SERVICE_DATA: Record<string, {
   },
   "first-home-buyers": {
     eyebrow: "Service / 09",
-    title: <>First home <span className="italic text-copper">buyers.</span></>,
+    title: { lead: "First home", accent: "buyers." },
     intro: "Your first property is the most consequential financial decision of your life. We approach it with the seriousness it deserves.",
     overview: "First-home buyers need more than a transaction — they need education, grant navigation, mortgage clarity, and a calm presence in a process designed to overwhelm. Anchorfield delivers all four.",
     benefits: ["Grant and stamp-duty concession navigation", "Integrated mortgage strategy and pre-approval", "Property education throughout the process", "Discipline against emotional buying and auction pressure"],
@@ -136,7 +136,7 @@ const SERVICE_DATA: Record<string, {
   },
   "interstate": {
     eyebrow: "Service / 10",
-    title: <>Interstate <span className="italic text-copper">buyers.</span></>,
+    title: { lead: "Interstate", accent: "buyers." },
     intro: "Buy confidently in Melbourne, Sydney, Brisbane, or Perth — from anywhere in Australia. Local intelligence, remote convenience.",
     overview: "Interstate buyers face a unique disadvantage: unfamiliar suburbs, different state laws, and the inability to inspect in person. Our national coverage and video-first process turn that disadvantage into an asset.",
     benefits: ["Local suburb intelligence in every major metro", "Video walkthroughs and remote inspections", "State-specific stamp duty and contract expertise", "Single point of contact from brief to settlement"],
@@ -150,7 +150,7 @@ const SERVICE_DATA: Record<string, {
   },
   "expats": {
     eyebrow: "Service / 11",
-    title: <>Expat <span className="italic text-copper">buyers.</span></>,
+    title: { lead: "Expat", accent: "buyers." },
     intro: "Australian property for Australians abroad. Foreign-income mortgages, FIRB navigation, and time-zone-friendly service.",
     overview: "Buying Australian property while living overseas creates specific challenges: foreign-income lending, FIRB obligations for non-residents, and coordinating around global time zones. We do this every week.",
     benefits: ["Foreign-income mortgage structuring", "FIRB guidance where applicable", "Video walkthroughs and detailed remote reports", "Flexible scheduling across time zones"],
@@ -164,7 +164,7 @@ const SERVICE_DATA: Record<string, {
   },
   "smsf": {
     eyebrow: "Service / 12",
-    title: <>SMSF <span className="italic text-copper">property.</span></>,
+    title: { lead: "SMSF", accent: "property." },
     intro: "Compliant, growth-focused acquisition inside your self-managed super fund. Sole-purpose test, related-party rules, and lending navigated end-to-end.",
     overview: "SMSF property purchases are among the most rules-bound transactions in Australian real estate. Our dual mortgage and property expertise ensures both compliance and long-term growth outcomes.",
     benefits: ["Sole-purpose test and related-party compliance", "SMSF-specific lender navigation", "Investment-grade asset selection for super", "Coordination with your accountant and financial planner"],
@@ -178,7 +178,7 @@ const SERVICE_DATA: Record<string, {
   },
   "vendor-advocacy": {
     eyebrow: "Service / 13",
-    title: <>Vendor <span className="italic text-copper">advocacy.</span></>,
+    title: { lead: "Vendor", accent: "advocacy." },
     intro: "Sell with the same institutional discipline we apply to buying. Expert negotiation, right-sized campaign, maximum price.",
     overview: "Selling agents want to sell your property quickly, not necessarily for the highest possible price. Our vendor advocacy service represents you against the agent — selecting them, briefing them, and managing the campaign to your outcome, not theirs.",
     benefits: ["Independent agent selection and briefing", "Campaign structure and marketing oversight", "Buyer-side negotiation on your behalf", "No conflicts — we work only for you"],
@@ -200,7 +200,7 @@ export const Route = createFileRoute("/services/$slug")({
   },
   head: ({ loaderData, params }) => {
     if (!loaderData) return { meta: [{ title: "Service not found" }, { name: "robots", content: "noindex" }] };
-    const plain = typeof loaderData.data.title === "string" ? loaderData.data.title : params.slug;
+    const plain = `${loaderData.data.title.lead} ${loaderData.data.title.accent}`;
     return {
       meta: [
         { title: `${plain} — Anchorfield` },
@@ -225,7 +225,16 @@ function ServiceDetail() {
   const { data } = Route.useLoaderData();
   return (
     <>
-      <PageHero backgroundImage={heroBg} eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
+      <PageHero
+        backgroundImage={heroBg}
+        eyebrow={data.eyebrow}
+        title={
+          <>
+            {data.title.lead} <span className="italic text-copper">{data.title.accent}</span>
+          </>
+        }
+        intro={data.intro}
+      />
 
       <section className="py-24 border-t border-white/5">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">

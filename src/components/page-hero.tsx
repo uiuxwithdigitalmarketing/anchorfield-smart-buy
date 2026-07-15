@@ -21,9 +21,9 @@ export function PageHero({
   imagePosition = "center",
 }: Props) {
   return (
-    <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
+    <section className="relative isolate pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
       {/* Background image + cinematic overlays */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img
           src={backgroundImage}
           alt={imageAlt}
@@ -41,7 +41,7 @@ export function PageHero({
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.08] blur-[120px]" />
       </div>
 
-      <div className="container-editorial relative">
+      <div className="container-editorial relative z-10">
         <div className="flex items-center gap-4 mb-8 animate-fade">
           <div className="w-px h-10 bg-copper animate-line-draw" />
           <span className="text-eyebrow">{eyebrow}</span>
