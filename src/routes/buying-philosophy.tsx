@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-interior.jpg";
+import heroBg from "@/assets/hero-philosophy.jpg";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBlock } from "@/components/cta-block";
 
