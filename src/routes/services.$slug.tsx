@@ -2,6 +2,25 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
 import { CtaBlock } from "@/components/cta-block";
 import { Check } from "lucide-react";
+import heroArchitecture from "@/assets/hero-architecture.jpg";
+import heroFounder from "@/assets/hero-founder-bg.jpg";
+import heroMortgage from "@/assets/hero-mortgage.jpg";
+import heroAbout from "@/assets/hero-about.jpg";
+import heroServices from "@/assets/hero-services.jpg";
+import heroPhilosophy from "@/assets/hero-philosophy.jpg";
+import heroFaqs from "@/assets/hero-faqs.jpg";
+import heroWhyus from "@/assets/hero-whyus.jpg";
+
+const SLUG_HERO: Record<string, string> = {
+  "buyers-advocacy": heroArchitecture,
+  "off-market": heroFounder,
+  "auction-bidding": heroMortgage,
+  "negotiation": heroAbout,
+  "investment-advisory": heroServices,
+  "portfolio-strategy": heroPhilosophy,
+  "property-research": heroFaqs,
+  "vendor-advocacy": heroWhyus,
+};
 
 const SERVICE_DATA: Record<string, {
   eyebrow: string;
@@ -224,7 +243,7 @@ function ServiceDetail() {
   const { data } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
+      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} backgroundImage={SLUG_HERO[Route.useLoaderData().slug]} />
 
       <section className="py-24 border-t border-white/5">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
