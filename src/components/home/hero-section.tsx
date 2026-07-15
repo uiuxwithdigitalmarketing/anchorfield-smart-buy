@@ -4,9 +4,9 @@ import heroImage from "@/assets/hero-melbourne.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
+    <section className="relative isolate min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
       {/* Backdrop imagery */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Melbourne skyline at dusk"

@@ -130,7 +130,7 @@ export function SiteNav() {
 
           {/* Desktop navigation — Radix NavigationMenu (keyboard + ARIA) */}
           <NavigationMenu.Root
-            className="hidden lg:flex relative"
+            className="hidden lg:flex"
             aria-label="Primary"
             delayDuration={100}
           >
@@ -159,7 +159,7 @@ export function SiteNav() {
                           className="opacity-60 transition-transform duration-300 group-data-[state=open]:rotate-180"
                         />
                       </NavigationMenu.Trigger>
-                      <NavigationMenu.Content className="absolute left-0 right-0 top-full data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
+                      <NavigationMenu.Content className="fixed left-0 right-0 top-20 w-screen data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
                         <MegaMenu item={item} />
                       </NavigationMenu.Content>
                     </>
@@ -182,8 +182,8 @@ export function SiteNav() {
             </NavigationMenu.List>
 
             {/* Viewport positions Content; we render full-width panels ourselves */}
-            <div className="absolute top-full left-0 right-0 flex justify-center">
-              <NavigationMenu.Viewport className="relative w-full origin-top data-[state=closed]:animate-fade data-[state=open]:animate-fade" />
+            <div className="fixed left-0 right-0 top-20 flex justify-center">
+              <NavigationMenu.Viewport className="relative w-screen origin-top data-[state=closed]:animate-fade data-[state=open]:animate-fade" />
             </div>
           </NavigationMenu.Root>
 
@@ -301,7 +301,7 @@ function MegaMenu({ item }: { item: NavItem }) {
   const overviewActive = pathname === item.to;
 
   return (
-    <div className="bg-midnight/95 backdrop-blur-xl border-t border-white/5 shadow-2xl">
+    <div className="w-screen bg-midnight/95 backdrop-blur-xl border-t border-white/5 shadow-2xl">
       <div className="container-editorial py-12">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
