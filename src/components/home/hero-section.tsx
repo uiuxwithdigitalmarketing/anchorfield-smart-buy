@@ -1,16 +1,17 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-melbourne.jpg";
+import heroPicture from "@/assets/hero-melbourne.jpg?hero";
+import { HeroImage } from "@/components/hero-image";
 
 export function HeroSection() {
   return (
     <section className="relative isolate bg-midnight min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
       {/* Backdrop imagery */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
-        <img
-          src={heroImage}
-          alt=""
-          fetchPriority="high"
+        <HeroImage
+          picture={heroPicture}
+          priority
+          sizes="100vw"
           className="w-full h-full object-cover scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-midnight/35 via-midnight/15 to-midnight/80" />
