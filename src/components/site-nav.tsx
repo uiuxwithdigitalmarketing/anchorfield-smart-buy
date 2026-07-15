@@ -159,7 +159,7 @@ export function SiteNav() {
                           className="opacity-60 transition-transform duration-300 group-data-[state=open]:rotate-180"
                         />
                       </NavigationMenu.Trigger>
-                      <NavigationMenu.Content className="absolute left-0 right-0 top-full data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
+                      <NavigationMenu.Content className="w-screen data-[motion=from-start]:animate-fade data-[motion=from-end]:animate-fade data-[motion=to-start]:animate-fade data-[motion=to-end]:animate-fade">
                         <MegaMenu item={item} />
                       </NavigationMenu.Content>
                     </>
@@ -181,9 +181,9 @@ export function SiteNav() {
 
             </NavigationMenu.List>
 
-            {/* Viewport positions Content; we render full-width panels ourselves */}
-            <div className="absolute top-full left-0 right-0 flex justify-center">
-              <NavigationMenu.Viewport className="relative w-full origin-top data-[state=closed]:animate-fade data-[state=open]:animate-fade" />
+            {/* Full-viewport-width mega-menu panel: fixed so it spans past the nav's own width */}
+            <div className="fixed left-0 right-0 top-20 w-screen flex justify-center pointer-events-none">
+              <NavigationMenu.Viewport className="pointer-events-auto relative w-screen origin-top data-[state=closed]:animate-fade data-[state=open]:animate-fade" />
             </div>
           </NavigationMenu.Root>
 
