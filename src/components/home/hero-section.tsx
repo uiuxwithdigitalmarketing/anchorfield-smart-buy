@@ -11,10 +11,10 @@ export function HeroSection() {
           src={heroImage}
           alt="Melbourne skyline at dusk"
           fetchPriority="high"
-          className="w-full h-full object-cover scale-105"
+          className="w-full h-full object-cover scale-105 brightness-125 contrast-[1.05]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/70 via-midnight/40 to-midnight" />
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/55 via-midnight/35 to-midnight" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-transparent to-transparent" />
       </div>
 
       <div className="container-editorial relative z-10 grid lg:grid-cols-12 gap-8 items-end">

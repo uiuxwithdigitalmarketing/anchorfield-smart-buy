@@ -30,13 +30,13 @@ export function PageHero({
           aria-hidden={imageAlt === "" ? "true" : undefined}
           width={1920}
           height={1080}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover brightness-125 contrast-[1.05]"
           style={{ objectPosition: imagePosition }}
         />
         {/* Subtle vertical fade — keeps text readable without hiding the photo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/55 via-midnight/30 to-midnight/85" />
-        {/* Left vignette holds copy against imagery */}
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/80 via-midnight/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/45 via-midnight/25 to-midnight/75" />
+        {/* Left vignette holds copy against imagery while letting the image breathe */}
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-midnight/20 to-transparent" />
         {/* Copper glow accent */}
         <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.08] blur-[120px]" />
       </div>
