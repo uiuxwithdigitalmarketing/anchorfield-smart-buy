@@ -13,8 +13,11 @@ import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as MortgageExpertiseRouteImport } from './routes/mortgage-expertise'
+import { Route as MeetTheFounderRouteImport } from './routes/meet-the-founder'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BuyingPhilosophyRouteImport } from './routes/buying-philosophy'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -41,6 +44,16 @@ const ProcessRoute = ProcessRouteImport.update({
   path: '/process',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MortgageExpertiseRoute = MortgageExpertiseRouteImport.update({
+  id: '/mortgage-expertise',
+  path: '/mortgage-expertise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeetTheFounderRoute = MeetTheFounderRouteImport.update({
+  id: '/meet-the-founder',
+  path: '/meet-the-founder',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
@@ -49,6 +62,11 @@ const FaqsRoute = FaqsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyingPhilosophyRoute = BuyingPhilosophyRouteImport.update({
+  id: '/buying-philosophy',
+  path: '/buying-philosophy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -81,8 +99,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/buying-philosophy': typeof BuyingPhilosophyRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/meet-the-founder': typeof MeetTheFounderRoute
+  '/mortgage-expertise': typeof MortgageExpertiseRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -94,8 +115,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/buying-philosophy': typeof BuyingPhilosophyRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/meet-the-founder': typeof MeetTheFounderRoute
+  '/mortgage-expertise': typeof MortgageExpertiseRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -108,8 +132,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
+  '/buying-philosophy': typeof BuyingPhilosophyRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/meet-the-founder': typeof MeetTheFounderRoute
+  '/mortgage-expertise': typeof MortgageExpertiseRoute
   '/process': typeof ProcessRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -123,8 +150,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/buying-philosophy'
     | '/contact'
     | '/faqs'
+    | '/meet-the-founder'
+    | '/mortgage-expertise'
     | '/process'
     | '/services'
     | '/sitemap.xml'
@@ -136,8 +166,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/buying-philosophy'
     | '/contact'
     | '/faqs'
+    | '/meet-the-founder'
+    | '/mortgage-expertise'
     | '/process'
     | '/services'
     | '/sitemap.xml'
@@ -149,8 +182,11 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/blog'
+    | '/buying-philosophy'
     | '/contact'
     | '/faqs'
+    | '/meet-the-founder'
+    | '/mortgage-expertise'
     | '/process'
     | '/services'
     | '/sitemap.xml'
@@ -163,8 +199,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
+  BuyingPhilosophyRoute: typeof BuyingPhilosophyRoute
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
+  MeetTheFounderRoute: typeof MeetTheFounderRoute
+  MortgageExpertiseRoute: typeof MortgageExpertiseRoute
   ProcessRoute: typeof ProcessRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -201,6 +240,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mortgage-expertise': {
+      id: '/mortgage-expertise'
+      path: '/mortgage-expertise'
+      fullPath: '/mortgage-expertise'
+      preLoaderRoute: typeof MortgageExpertiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meet-the-founder': {
+      id: '/meet-the-founder'
+      path: '/meet-the-founder'
+      fullPath: '/meet-the-founder'
+      preLoaderRoute: typeof MeetTheFounderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
@@ -213,6 +266,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buying-philosophy': {
+      id: '/buying-philosophy'
+      path: '/buying-philosophy'
+      fullPath: '/buying-philosophy'
+      preLoaderRoute: typeof BuyingPhilosophyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -279,8 +339,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
+  BuyingPhilosophyRoute: BuyingPhilosophyRoute,
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
+  MeetTheFounderRoute: MeetTheFounderRoute,
+  MortgageExpertiseRoute: MortgageExpertiseRoute,
   ProcessRoute: ProcessRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -289,13 +352,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
