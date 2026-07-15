@@ -75,7 +75,7 @@ function BlogPost() {
       />
       <article className="pb-24">
         <div className="container-editorial max-w-3xl">
-          {post.body.map((p, i) => (
+          {post.body.map((p: string, i: number) => (
             <p key={i} className={`text-paper/80 leading-relaxed mb-6 ${i === 0 ? "text-xl md:text-2xl font-display italic text-paper" : "text-lg"}`}>
               {p}
             </p>

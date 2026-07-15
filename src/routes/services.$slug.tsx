@@ -249,7 +249,7 @@ function ServiceDetail() {
             </h2>
           </div>
           <div className="lg:col-span-8 space-y-4">
-            {data.benefits.map((b, i) => (
+            {data.benefits.map((b: string, i: number) => (
               <div key={i} className="flex items-start gap-4 py-5 border-b border-white/10">
                 <Check size={18} className="text-copper shrink-0 mt-1" />
                 <span className="text-lg text-paper/85">{b}</span>
@@ -266,7 +266,7 @@ function ServiceDetail() {
             How it works.
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
-            {data.process.map((p) => (
+            {data.process.map((p: {n: string; t: string; d: string}) => (
               <div key={p.n} className="bg-midnight p-8">
                 <div className="font-mono-brand text-copper text-xs mb-6">STEP {p.n}</div>
                 <h3 className="font-display italic text-2xl mb-3">{p.t}</h3>
