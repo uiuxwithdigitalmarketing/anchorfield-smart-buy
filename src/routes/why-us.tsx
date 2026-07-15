@@ -15,7 +15,7 @@ export const Route = createFileRoute("/why-us")({
       { property: "og:title", content: "Why Anchorfield" },
       { property: "og:url", content: "/why-us" },
     ],
-    links: [{ rel: "canonical", href: "/why-us" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/why-us" }],
   }),
   component: () => (
     <>

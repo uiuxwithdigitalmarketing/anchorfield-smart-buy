@@ -12,7 +12,7 @@ export const Route = createFileRoute("/faqs")({
       { name: "description", content: "Common questions about engaging Anchorfield, our fees, methodology, and areas of coverage." },
       { property: "og:url", content: "/faqs" },
     ],
-    links: [{ rel: "canonical", href: "/faqs" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/faqs" }],
   }),
   component: () => (
     <>

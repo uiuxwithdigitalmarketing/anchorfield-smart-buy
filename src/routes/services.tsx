@@ -13,7 +13,7 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Anchorfield Services" },
       { property: "og:url", content: "/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/services" }],
   }),
   component: Services,
 });

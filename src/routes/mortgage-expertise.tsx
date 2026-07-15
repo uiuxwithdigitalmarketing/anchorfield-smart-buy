@@ -14,7 +14,7 @@ export const Route = createFileRoute("/mortgage-expertise")({
       { property: "og:title", content: "Mortgage Expertise Advantage" },
       { property: "og:description", content: "The structural edge only an in-house finance team can deliver." },
     ],
-    links: [{ rel: "canonical", href: "/mortgage-expertise" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/mortgage-expertise" }],
   }),
   component: Page,
 });

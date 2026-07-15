@@ -12,7 +12,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Book a Consultation — Anchorfield" },
       { property: "og:url", content: "/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/contact" }],
   }),
   component: Contact,
 });

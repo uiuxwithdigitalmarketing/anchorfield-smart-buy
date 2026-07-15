@@ -51,7 +51,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/blog/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [heroPreloadLink(heroPicture), { rel: "canonical", href: `/blog/${params.slug}` }],
     };
   },
   component: BlogPost,

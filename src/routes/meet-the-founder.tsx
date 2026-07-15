@@ -13,7 +13,7 @@ export const Route = createFileRoute("/meet-the-founder")({
       { property: "og:title", content: "Meet the Founder — Anchorfield" },
       { property: "og:description", content: "Mortgage broker turned buyer's advocate. The story behind Anchorfield." },
     ],
-    links: [{ rel: "canonical", href: "/meet-the-founder" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/meet-the-founder" }],
   }),
   component: Page,
 });

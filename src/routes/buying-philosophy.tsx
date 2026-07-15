@@ -13,7 +13,7 @@ export const Route = createFileRoute("/buying-philosophy")({
       { property: "og:title", content: "Our Buying Philosophy — Anchorfield" },
       { property: "og:description", content: "Buy like a bank. Financial rigor applied to every acquisition." },
     ],
-    links: [{ rel: "canonical", href: "/buying-philosophy" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/buying-philosophy" }],
   }),
   component: Page,
 });

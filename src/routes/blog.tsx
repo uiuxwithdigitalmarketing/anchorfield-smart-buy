@@ -20,7 +20,7 @@ export const Route = createFileRoute("/blog")({
       { name: "description", content: "Quarterly market reports, investment analysis, and practical guides from Australia's financial-grade buyer's advocacy." },
       { property: "og:url", content: "/blog" },
     ],
-    links: [{ rel: "canonical", href: "/blog" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/blog" }],
   }),
   component: () => (
     <>

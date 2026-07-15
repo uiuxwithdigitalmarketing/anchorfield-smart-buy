@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: "Financial-grade buyer's advocacy for discerning Australian buyers." },
       { property: "og:url", content: "/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/about" }],
   }),
   component: About,
 });

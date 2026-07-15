@@ -14,7 +14,7 @@ export const Route = createFileRoute("/process")({
       { property: "og:title", content: "Anchorfield — Our Process" },
       { property: "og:url", content: "/process" },
     ],
-    links: [{ rel: "canonical", href: "/process" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/process" }],
   }),
   component: () => (
     <>
