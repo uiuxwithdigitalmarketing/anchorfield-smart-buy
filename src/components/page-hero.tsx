@@ -1,20 +1,47 @@
 import type { ReactNode } from "react";
+import defaultBg from "@/assets/hero-architecture.jpg";
 
 interface Props {
   eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   chapter?: string;
+  backgroundImage?: string;
+  imageAlt?: string;
+  imagePosition?: string;
 }
 
-export function PageHero({ eyebrow, title, intro, chapter }: Props) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  chapter,
+  backgroundImage = defaultBg,
+  imageAlt = "",
+  imagePosition = "center",
+}: Props) {
   return (
     <section className="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
+      {/* Background image + cinematic overlays */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,oklch(0.24_0.05_258/0.5),transparent_60%)]" />
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.06] blur-[120px]" />
+        <img
+          src={backgroundImage}
+          alt={imageAlt}
+          aria-hidden={imageAlt === "" ? "true" : undefined}
+          width={1920}
+          height={1080}
+          className="w-full h-full object-cover"
+          style={{ objectPosition: imagePosition }}
+        />
+        {/* Vertical fade to midnight for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/85 via-midnight/75 to-midnight" />
+        {/* Left vignette holds copy against imagery */}
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/90 via-midnight/40 to-transparent" />
+        {/* Copper glow accent */}
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.05] blur-[120px]" />
       </div>
-      <div className="container-editorial">
+
+      <div className="container-editorial relative">
         <div className="flex items-center gap-4 mb-8 animate-fade">
           <div className="w-px h-10 bg-copper animate-line-draw" />
           <span className="text-eyebrow">{eyebrow}</span>
@@ -28,7 +55,7 @@ export function PageHero({ eyebrow, title, intro, chapter }: Props) {
           {title}
         </h1>
         {intro && (
-          <p className="mt-10 text-xl text-paper/60 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
+          <p className="mt-10 text-xl text-paper/70 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
             {intro}
           </p>
         )}

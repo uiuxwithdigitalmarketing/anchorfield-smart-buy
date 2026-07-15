@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-aerial.jpg";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   return (
     <>
-      <PageHero
+      <PageHero backgroundImage={heroBg}
         eyebrow="Contact / Consultation"
         chapter="(00) BEGIN"
         title={<>Book a private <span className="italic text-copper">strategy call.</span></>}

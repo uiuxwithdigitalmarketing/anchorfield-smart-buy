@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-aerial.jpg";
 import { ProcessTimeline } from "@/components/home/process-timeline";
 import { ComparisonTable } from "@/components/home/comparison-table";
 import { CtaBlock } from "@/components/cta-block";
@@ -16,7 +17,7 @@ export const Route = createFileRoute("/process")({
   }),
   component: () => (
     <>
-      <PageHero
+      <PageHero backgroundImage={heroBg}
         eyebrow="Process / Methodology"
         chapter="(03) HOW WE WORK"
         title={<>A disciplined <span className="italic text-copper">acquisition</span> protocol.</>}
