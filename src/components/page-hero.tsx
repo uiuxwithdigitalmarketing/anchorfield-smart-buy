@@ -33,12 +33,12 @@ export function PageHero({
           className="w-full h-full object-cover"
           style={{ objectPosition: imagePosition }}
         />
-        {/* Vertical fade to midnight for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/85 via-midnight/75 to-midnight" />
+        {/* Subtle vertical fade — keeps text readable without hiding the photo */}
+        <div className="absolute inset-0 bg-gradient-to-b from-midnight/55 via-midnight/30 to-midnight/85" />
         {/* Left vignette holds copy against imagery */}
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/90 via-midnight/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-midnight/80 via-midnight/20 to-transparent" />
         {/* Copper glow accent */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.05] blur-[120px]" />
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.08] blur-[120px]" />
       </div>
 
       <div className="container-editorial relative">
