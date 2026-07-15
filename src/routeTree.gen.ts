@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WhyUsRouteImport } from './routes/why-us'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as MortgageExpertiseRouteImport } from './routes/mortgage-expertise'
 import { Route as MeetTheFounderRouteImport } from './routes/meet-the-founder'
@@ -32,6 +33,11 @@ const WhyUsRoute = WhyUsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcessRoute = ProcessRouteImport.update({
@@ -80,14 +86,14 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
-  id: '/services/$slug',
-  path: '/services/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ServicesRoute,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/meet-the-founder': typeof MeetTheFounderRoute
   '/mortgage-expertise': typeof MortgageExpertiseRoute
   '/process': typeof ProcessRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/why-us': typeof WhyUsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -138,6 +145,7 @@ export interface FileRoutesById {
   '/meet-the-founder': typeof MeetTheFounderRoute
   '/mortgage-expertise': typeof MortgageExpertiseRoute
   '/process': typeof ProcessRoute
+  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/why-us': typeof WhyUsRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -156,6 +164,7 @@ export interface FileRouteTypes {
     | '/meet-the-founder'
     | '/mortgage-expertise'
     | '/process'
+    | '/services'
     | '/sitemap.xml'
     | '/why-us'
     | '/blog/$slug'
@@ -188,6 +197,7 @@ export interface FileRouteTypes {
     | '/meet-the-founder'
     | '/mortgage-expertise'
     | '/process'
+    | '/services'
     | '/sitemap.xml'
     | '/why-us'
     | '/blog/$slug'
@@ -205,10 +215,9 @@ export interface RootRouteChildren {
   MeetTheFounderRoute: typeof MeetTheFounderRoute
   MortgageExpertiseRoute: typeof MortgageExpertiseRoute
   ProcessRoute: typeof ProcessRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WhyUsRoute: typeof WhyUsRoute
-  ServicesSlugRoute: typeof ServicesSlugRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -225,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/process': {
@@ -292,17 +308,17 @@ declare module '@tanstack/react-router' {
     }
     '/services/': {
       id: '/services/'
-      path: '/services'
+      path: '/'
       fullPath: '/services/'
       preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/services/$slug': {
       id: '/services/$slug'
-      path: '/services/$slug'
+      path: '/$slug'
       fullPath: '/services/$slug'
       preLoaderRoute: typeof ServicesSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ServicesRoute
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -324,6 +340,20 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface ServicesRouteChildren {
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesSlugRoute: ServicesSlugRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -334,10 +364,9 @@ const rootRouteChildren: RootRouteChildren = {
   MeetTheFounderRoute: MeetTheFounderRoute,
   MortgageExpertiseRoute: MortgageExpertiseRoute,
   ProcessRoute: ProcessRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WhyUsRoute: WhyUsRoute,
-  ServicesSlugRoute: ServicesSlugRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
