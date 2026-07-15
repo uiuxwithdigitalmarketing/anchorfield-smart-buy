@@ -244,7 +244,7 @@ function ServiceDetail() {
   const { data, slug } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} backgroundImage={SLUG_HERO[slug]} />
+      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} picture={SLUG_HERO[slug]} />
 
       <section className="py-24 border-t border-white/5">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
