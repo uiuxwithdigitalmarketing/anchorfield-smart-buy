@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-blog.jpg";
 import { ArrowUpRight } from "lucide-react";
 
 const POSTS = [
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/blog")({
   }),
   component: () => (
     <>
-      <PageHero
+      <PageHero backgroundImage={heroBg}
         eyebrow="Insights / Journal"
         chapter="(07) INTELLIGENCE"
         title={<>The Anchorfield <span className="italic text-copper">journal.</span></>}
