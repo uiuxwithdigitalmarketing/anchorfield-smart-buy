@@ -1,5 +1,6 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-service-detail.jpg";
 import { CtaBlock } from "@/components/cta-block";
 import { Check } from "lucide-react";
 
@@ -224,7 +225,7 @@ function ServiceDetail() {
   const { data } = Route.useLoaderData();
   return (
     <>
-      <PageHero eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
+      <PageHero backgroundImage={heroBg} eyebrow={data.eyebrow} title={data.title} intro={data.intro} />
 
       <section className="py-24 border-t border-white/5">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">

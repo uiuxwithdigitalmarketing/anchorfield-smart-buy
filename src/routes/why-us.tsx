@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-whyus.jpg";
 import { ComparisonTable } from "@/components/home/comparison-table";
 import { WhyBuyersLose } from "@/components/home/why-buyers-lose";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/why-us")({
   }),
   component: () => (
     <>
-      <PageHero
+      <PageHero backgroundImage={heroBg}
         eyebrow="Why Us / The Advantage"
         chapter="(04) THE DIFFERENCE"
         title={<>Why <span className="italic text-copper">Anchorfield.</span></>}
