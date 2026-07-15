@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-philosophy.jpg";
+import heroPicture from "@/assets/hero-philosophy.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { SectionHeader } from "@/components/section-header";
 import { CtaBlock } from "@/components/cta-block";
 
@@ -27,7 +28,7 @@ const PILLARS = [
 function Page() {
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow="About / Philosophy"
         chapter="(03) FIRST PRINCIPLES"
         title={<>Buy like a <span className="italic text-copper">bank,</span> not a bidder.</>}

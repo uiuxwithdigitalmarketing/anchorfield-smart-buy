@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-about.jpg";
+import heroPicture from "@/assets/hero-about.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { FounderSection } from "@/components/home/founder-section";
 import { CtaBlock } from "@/components/cta-block";
 import { TrustStrip } from "@/components/home/trust-strip";
@@ -29,7 +30,7 @@ const VALUES = [
 function About() {
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow="About / The Firm"
         chapter="EST. 2024 — MELBOURNE"
         title={

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-founder-bg.jpg";
+import heroPicture from "@/assets/hero-founder-bg.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { FounderSection } from "@/components/home/founder-section";
 import { CtaBlock } from "@/components/cta-block";
 
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/meet-the-founder")({
 function Page() {
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow="About / Founder"
         chapter="(01) THE PRINCIPAL"
         title={<>A mortgage broker who <span className="italic text-copper">refused to sell.</span></>}
