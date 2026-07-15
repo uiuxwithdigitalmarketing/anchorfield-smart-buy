@@ -278,17 +278,28 @@ export function SiteNav() {
   );
 }
 
+function resolveHref(to: string, params?: Record<string, string>) {
+  if (!params) return to;
+  return to.replace(/\$(\w+)/g, (_, k) => params[k] ?? `$${k}`);
+}
+
 function MegaMenu({ item }: { item: NavItem }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const overviewActive = pathname === item.to;
+
   return (
     <div className="bg-midnight/95 backdrop-blur-xl border-t border-white/5 shadow-2xl">
       <div className="container-editorial py-12">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
             <div className="text-eyebrow mb-3">{item.label}</div>
-            <NavigationMenu.Link asChild>
+            <NavigationMenu.Link asChild active={overviewActive}>
               <Link
                 to={item.to}
-                className="font-display italic text-3xl leading-tight hover:text-copper transition-colors inline-block focus-visible:outline-none focus-visible:text-copper"
+                className={`font-display italic text-3xl leading-tight hover:text-copper transition-colors inline-block focus-visible:outline-none focus-visible:text-copper ${
+                  overviewActive ? "text-copper" : ""
+                }`}
+                aria-current={overviewActive ? "page" : undefined}
               >
                 Overview →
               </Link>
@@ -303,24 +314,49 @@ function MegaMenu({ item }: { item: NavItem }) {
                 {col.heading}
               </div>
               <ul className="space-y-3">
-                {col.items.map((child) => (
-                  <li key={child.label}>
-                    <NavigationMenu.Link asChild>
-                      <Link
-                        to={child.to}
-                        params={child.params as never}
-                        className="group block rounded-sm -mx-2 px-2 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper"
-                      >
-                        <div className="text-sm text-paper/85 group-hover:text-copper transition-colors">
-                          {child.label}
-                        </div>
-                        {child.desc && (
-                          <div className="text-xs text-paper/40 mt-0.5">{child.desc}</div>
-                        )}
-                      </Link>
-                    </NavigationMenu.Link>
-                  </li>
-                ))}
+                {col.items.map((child) => {
+                  const href = resolveHref(child.to, child.params);
+                  const isActive = pathname === href;
+                  return (
+                    <li key={child.label}>
+                      <NavigationMenu.Link asChild active={isActive}>
+                        <Link
+                          to={child.to}
+                          params={child.params as never}
+                          aria-current={isActive ? "page" : undefined}
+                          className={`group relative block rounded-sm -mx-2 px-2 py-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper ${
+                            isActive ? "bg-copper/[0.08]" : ""
+                          }`}
+                        >
+                          {isActive && (
+                            <span
+                              aria-hidden="true"
+                              className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-px bg-copper"
+                            />
+                          )}
+                          <div
+                            className={`text-sm transition-colors ${
+                              isActive
+                                ? "text-copper"
+                                : "text-paper/85 group-hover:text-copper"
+                            }`}
+                          >
+                            {child.label}
+                          </div>
+                          {child.desc && (
+                            <div
+                              className={`text-xs mt-0.5 ${
+                                isActive ? "text-copper/60" : "text-paper/40"
+                              }`}
+                            >
+                              {child.desc}
+                            </div>
+                          )}
+                        </Link>
+                      </NavigationMenu.Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -329,3 +365,4 @@ function MegaMenu({ item }: { item: NavItem }) {
     </div>
   );
 }
+
