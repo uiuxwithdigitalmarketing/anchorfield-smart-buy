@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-contact.jpg";
+import heroPicture from "@/assets/hero-contact.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Book a Consultation — Anchorfield" },
       { property: "og:url", content: "/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/contact" }],
   }),
   component: Contact,
 });
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/contact")({
 function Contact() {
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow="Contact / Consultation"
         chapter="(00) BEGIN"
         title={<>Book a private <span className="italic text-copper">strategy call.</span></>}

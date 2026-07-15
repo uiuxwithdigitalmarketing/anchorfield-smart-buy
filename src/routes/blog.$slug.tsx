@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-blog.jpg";
+import heroPicture from "@/assets/hero-blog.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { CtaBlock } from "@/components/cta-block";
 
 const POSTS: Record<string, { tag: string; date: string; title: string; read: string; body: string[] }> = {
@@ -50,7 +51,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/blog/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [heroPreloadLink(heroPicture), { rel: "canonical", href: `/blog/${params.slug}` }],
     };
   },
   component: BlogPost,
@@ -69,7 +70,7 @@ function BlogPost() {
   }
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow={`${post.tag} — ${post.date}`}
         chapter={`${post.read} READ`}
         title={<span>{post.title}</span>}

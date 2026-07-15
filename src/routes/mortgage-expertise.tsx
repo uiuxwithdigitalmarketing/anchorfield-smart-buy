@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
-import heroBg from "@/assets/hero-mortgage.jpg";
+import heroPicture from "@/assets/hero-mortgage.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 import { SectionHeader } from "@/components/section-header";
 import { ComparisonTable } from "@/components/home/comparison-table";
 import { CtaBlock } from "@/components/cta-block";
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/mortgage-expertise")({
       { property: "og:title", content: "Mortgage Expertise Advantage" },
       { property: "og:description", content: "The structural edge only an in-house finance team can deliver." },
     ],
-    links: [{ rel: "canonical", href: "/mortgage-expertise" }],
+    links: [heroPreloadLink(heroPicture), { rel: "canonical", href: "/mortgage-expertise" }],
   }),
   component: Page,
 });
@@ -27,7 +28,7 @@ const BENEFITS = [
 function Page() {
   return (
     <>
-      <PageHero backgroundImage={heroBg}
+      <PageHero picture={heroPicture}
         eyebrow="About / The Advantage"
         chapter="(04) STRUCTURAL EDGE"
         title={<>Property and mortgage, <span className="italic text-copper">one desk.</span></>}
