@@ -176,7 +176,9 @@ export function SiteNav() {
                     </NavigationMenu.Link>
                   )}
                 </NavigationMenu.Item>
-              ))}
+                );
+              })}
+
             </NavigationMenu.List>
 
             {/* Viewport positions Content; we render full-width panels ourselves */}
