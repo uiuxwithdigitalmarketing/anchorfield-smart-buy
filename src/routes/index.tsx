@@ -12,8 +12,13 @@ import { InsightsSection } from "@/components/home/insights-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { FaqAccordion } from "@/components/home/faq-accordion";
 import { CtaBlock } from "@/components/cta-block";
+import heroPicture from "@/assets/hero-melbourne.jpg?hero";
+import { heroPreloadLink } from "@/components/hero-image";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [heroPreloadLink(heroPicture)],
+  }),
   component: Home,
 });
 
