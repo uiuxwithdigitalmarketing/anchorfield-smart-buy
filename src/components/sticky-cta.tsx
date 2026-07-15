@@ -16,15 +16,17 @@ export function StickyConsultCTA() {
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8 pointer-events-none"
       }`}
     >
-      <Link
-        to="/contact"
+      <a
+        href="https://wa.me/0000000000"
+        target="_blank"
+        rel="noopener noreferrer"
         className="group flex items-center gap-3 bg-copper text-midnight pl-5 pr-4 py-3.5 rounded-full shadow-2xl font-semibold text-xs uppercase tracking-[0.2em]"
       >
-        Book Consultation
+        WhatsApp
         <span className="w-7 h-7 rounded-full bg-midnight text-copper flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
           <ArrowRight size={13} />
         </span>
-      </Link>
+      </a>
     </div>
   );
 }
