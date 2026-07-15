@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/page-hero";
+import heroBg from "@/assets/hero-aerial.jpg";
 import { CtaBlock } from "@/components/cta-block";
 import { ArrowUpRight } from "lucide-react";
 
@@ -50,7 +51,7 @@ const GROUPS = [
 function Services() {
   return (
     <>
-      <PageHero
+      <PageHero backgroundImage={heroBg}
         eyebrow="Services / Full scope"
         chapter="(02) CORE COMPETENCIES"
         title={
