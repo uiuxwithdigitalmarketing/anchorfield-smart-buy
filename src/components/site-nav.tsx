@@ -124,9 +124,9 @@ export function SiteNav() {
             <img
               src="/logo-anchorfield.png"
               alt="Anchorfield Buyers Agency"
-              width={877}
-              height={400}
-              className="h-9 md:h-11 w-auto"
+              width={523}
+              height={360}
+              className="h-11 md:h-14 w-auto mix-blend-multiply"
             />
 
           </Link>

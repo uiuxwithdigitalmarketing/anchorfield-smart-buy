@@ -41,6 +41,14 @@ export function SiteFooter() {
         {/* Big brand mark */}
         <div className="grid lg:grid-cols-12 gap-16 mb-20">
           <div className="lg:col-span-5">
+            <img
+              src="/logo-anchorfield.png"
+              alt="Anchorfield Buyers Agency"
+              width={523}
+              height={360}
+              loading="lazy"
+              className="h-16 w-auto mb-10 mix-blend-multiply"
+            />
             <div className="text-eyebrow mb-8">The Market Report — Quarterly</div>
             <h3 className="font-display italic text-4xl md:text-5xl leading-[1.05] mb-8">
               Institutional-grade insights, delivered to Australia's most discerning buyers.
