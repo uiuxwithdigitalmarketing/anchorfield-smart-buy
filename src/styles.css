@@ -115,7 +115,13 @@
 }
 
 /* Utilities */
-@utility font-display { font-family: var(--font-display); }
+@utility font-display {
+  font-family: var(--font-display);
+  font-stretch: 84%;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+@utility font-editorial { font-family: var(--font-serif-editorial); }
 @utility font-mono-brand { font-family: var(--font-mono); }
 
 @utility text-eyebrow {
@@ -213,3 +219,65 @@
 @utility animate-fade { animation: fade-in 1.2s var(--ease-out-expo) both; }
 @utility animate-line-draw { animation: line-draw 1s var(--ease-out-expo) both; transform-origin: top; }
 @utility animate-marquee { animation: marquee 40s linear infinite; }
+
+
+/* ── Redesign system: taupe surfaces, reveal + line motion ───────────── */
+:root {
+  --taupe: oklch(0.83 0.024 74);
+  --stone: oklch(0.968 0.006 80);
+}
+@theme inline {
+  --color-taupe: var(--taupe);
+  --color-stone: var(--stone);
+}
+
+@utility af-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 1s var(--ease-out-expo),
+    transform 1s var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+@utility af-reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes af-draw {
+  from { stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+  to { stroke-dasharray: 1400; stroke-dashoffset: 0; }
+}
+@utility af-draw { animation: af-draw 2.6s var(--ease-out-expo) both; }
+
+@utility rule-hair { height: 1px; background: oklch(0.19 0.008 265 / 0.12); }
+
+@utility btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 3px;
+  border-bottom: 1px solid oklch(0.19 0.008 265 / 0.3);
+  transition: all 0.4s var(--ease-out-expo);
+  &:hover { color: var(--copper); border-color: var(--copper); gap: 0.9rem; }
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .af-reveal { opacity: 1 !important; transform: none !important; }
+}
