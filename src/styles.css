@@ -146,32 +146,32 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background: var(--copper);
-  color: var(--midnight);
+  background: var(--ink);
+  color: oklch(0.99 0.003 85);
   padding: 0.95rem 1.75rem;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border-radius: 2px;
   transition: all 0.4s var(--ease-out-expo);
-  &:hover { background: var(--paper); transform: translateY(-1px); box-shadow: var(--shadow-glow); }
+  &:hover { background: var(--copper); }
 }
 
 @utility btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  border: 1px solid oklch(1 0 0 / 0.18);
-  color: var(--paper);
+  border: 1px solid oklch(0.19 0.008 265 / 0.2);
+  color: var(--ink);
   padding: 0.95rem 1.75rem;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border-radius: 2px;
   transition: all 0.4s var(--ease-out-expo);
-  &:hover { background: oklch(1 0 0 / 0.05); border-color: var(--copper); color: var(--copper); }
+  &:hover { border-color: var(--copper); color: var(--copper); }
 }
 
 @utility link-underline {
