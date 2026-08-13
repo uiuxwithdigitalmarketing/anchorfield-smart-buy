@@ -34,13 +34,13 @@ function Page() {
         intro="Property is a financial decision first, an emotional one second. Every mandate we accept is filtered through institutional discipline."
       />
 
-      <section className="py-24 border-t border-ink/5">
+      <section className="py-24 border-t border-ink/10">
         <div className="container-editorial">
           <SectionHeader
             eyebrow="Four pillars"
             title={<>The Anchorfield <span className="italic text-copper">doctrine.</span></>}
           />
-          <div className="mt-16 grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/5">
+          <div className="mt-16 grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/10">
             {PILLARS.map((p) => (
               <div key={p.n} className="bg-midnight p-10">
                 <div className="font-mono-brand text-copper text-xs tracking-widest mb-4">{p.n}</div>

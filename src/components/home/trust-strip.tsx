@@ -2,7 +2,7 @@ const CREDENTIALS = ["REBAA", "PIPA", "REIV", "MFAA", "FBAA", "FSA Federation"];
 
 export function TrustStrip() {
   return (
-    <section className="py-20 border-b border-ink/5">
+    <section className="py-20 border-b border-ink/10">
       <div className="container-editorial">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-4">
@@ -12,7 +12,7 @@ export function TrustStrip() {
               buyer's advocacy, mortgage broking, and investment property advisory.
             </p>
           </div>
-          <div className="lg:col-span-8 grid grid-cols-3 md:grid-cols-6 gap-px bg-ink/5 border border-ink/5">
+          <div className="lg:col-span-8 grid grid-cols-3 md:grid-cols-6 gap-px bg-ink/5 border border-ink/10">
             {CREDENTIALS.map((c) => (
               <div
                 key={c}

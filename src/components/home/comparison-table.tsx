@@ -12,7 +12,7 @@ const ROWS = [
 
 export function ComparisonTable() {
   return (
-    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/5">
+    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/10">
       <div className="container-editorial">
         <SectionHeader
           eyebrow="(04) The Advantage"
@@ -35,7 +35,7 @@ export function ComparisonTable() {
           {ROWS.map((r) => (
             <div
               key={r.crit}
-              className="grid grid-cols-[1.2fr_1fr_1fr] items-center py-6 border-b border-ink/5 group hover:bg-ink/[0.02] transition-colors"
+              className="grid grid-cols-[1.2fr_1fr_1fr] items-center py-6 border-b border-ink/10 group hover:bg-ink/[0.02] transition-colors"
             >
               <div className="font-display text-lg md:text-2xl italic pr-4">{r.crit}</div>
               <div className="text-center text-sm text-ink/50 flex items-center gap-2 justify-center">

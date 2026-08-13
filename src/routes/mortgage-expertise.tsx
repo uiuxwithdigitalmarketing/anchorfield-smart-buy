@@ -34,10 +34,10 @@ function Page() {
         intro="Anchorfield is the only Australian buyer's advocacy built on a mortgage broking foundation. That structural difference is the client's competitive edge."
       />
 
-      <section className="py-24 border-t border-ink/5">
+      <section className="py-24 border-t border-ink/10">
         <div className="container-editorial">
           <SectionHeader eyebrow="Three benefits" title={<>What integration <span className="italic text-copper">unlocks.</span></>} />
-          <div className="mt-16 grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/5">
+          <div className="mt-16 grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/10">
             {BENEFITS.map((b) => (
               <div key={b.n} className="bg-midnight p-10">
                 <div className="font-mono-brand text-copper text-xs tracking-widest mb-4">{b.n}</div>

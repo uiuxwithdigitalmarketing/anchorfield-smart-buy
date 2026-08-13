@@ -45,7 +45,7 @@ export function InsightsSection() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/5">
+        <div className="grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/10">
           {POSTS.map((p) => (
             <Link
               key={p.slug}

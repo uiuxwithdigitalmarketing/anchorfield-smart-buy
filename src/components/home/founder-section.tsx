@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export function FounderSection() {
   return (
-    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/5">
+    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/10">
       <div className="container-editorial grid lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-5">
           <div className="relative aspect-[3/4] overflow-hidden">

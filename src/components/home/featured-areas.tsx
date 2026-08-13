@@ -28,7 +28,7 @@ export function FeaturedAreas() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="grid sm:grid-cols-2 gap-px bg-ink/5 border border-ink/5">
+          <div className="grid sm:grid-cols-2 gap-px bg-ink/5 border border-ink/10">
             {AREAS.map((a) => (
               <button
                 key={a.name}

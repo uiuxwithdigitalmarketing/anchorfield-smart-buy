@@ -236,7 +236,7 @@ function ServiceDetail() {
         intro={data.intro}
       />
 
-      <section className="py-24 border-t border-ink/5">
+      <section className="py-24 border-t border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
             <div className="text-eyebrow mb-6">Overview</div>
@@ -250,7 +250,7 @@ function ServiceDetail() {
         </div>
       </section>
 
-      <section className="py-24 bg-navy/30 border-y border-ink/5">
+      <section className="py-24 bg-navy/30 border-y border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
             <div className="text-eyebrow mb-6">Client benefits</div>
@@ -275,7 +275,7 @@ function ServiceDetail() {
           <h2 className="font-display italic text-4xl md:text-5xl leading-[1.05] mb-16">
             How it works.
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border border-ink/5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border border-ink/10">
             {data.process.map((p: {n: string; t: string; d: string}) => (
               <div key={p.n} className="bg-midnight p-8">
                 <div className="font-mono-brand text-copper text-xs mb-6">STEP {p.n}</div>

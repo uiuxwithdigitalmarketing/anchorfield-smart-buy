@@ -30,7 +30,7 @@ export const Route = createFileRoute("/blog")({
         intro="Market reports, buyer briefings, and guides. Written for readers who prefer signal to noise."
       />
       <section className="pb-24">
-        <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border-y border-x border-ink/5">
+        <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border-y border-x border-ink/10">
           {POSTS.map((p) => (
             <Link
               key={p.slug}

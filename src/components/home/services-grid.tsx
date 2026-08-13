@@ -15,7 +15,7 @@ const SERVICES = [
 
 export function ServicesGrid() {
   return (
-    <section className="py-32 md:py-48 bg-navy/30 border-y border-ink/5">
+    <section className="py-32 md:py-48 bg-navy/30 border-y border-ink/10">
       <div className="container-editorial">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <SectionHeader
@@ -32,7 +32,7 @@ export function ServicesGrid() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/5 border border-ink/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/5 border border-ink/10">
           {SERVICES.map((s) => (
             <Link
               key={s.slug}

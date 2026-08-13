@@ -54,7 +54,7 @@ export function WhyBuyersLose() {
           {RISKS.map((r) => (
             <article
               key={r.n}
-              className="group grid grid-cols-[auto_1fr] gap-8 py-10 border-t border-ink/5 hover:border-copper/40 transition-colors"
+              className="group grid grid-cols-[auto_1fr] gap-8 py-10 border-t border-ink/10 hover:border-copper/40 transition-colors"
             >
               <div className="font-mono-brand text-copper text-sm pt-1">{r.n}</div>
               <div>

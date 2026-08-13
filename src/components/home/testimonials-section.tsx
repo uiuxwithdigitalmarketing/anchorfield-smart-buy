@@ -20,7 +20,7 @@ const T = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/5">
+    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/10">
       <div className="container-editorial">
         <SectionHeader
           eyebrow="(08) Client Record"

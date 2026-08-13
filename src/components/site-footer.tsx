@@ -36,7 +36,7 @@ const COLS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-midnight border-t border-ink/5 pt-24 pb-10">
+    <footer className="bg-midnight border-t border-ink/10 pt-24 pb-10">
       <div className="container-editorial">
         {/* Big brand mark */}
         <div className="grid lg:grid-cols-12 gap-16 mb-20">
@@ -77,7 +77,7 @@ export function SiteFooter() {
         </div>
 
         {/* Massive wordmark */}
-        <div className="relative overflow-hidden py-8 mb-8 border-y border-ink/5">
+        <div className="relative overflow-hidden py-8 mb-8 border-y border-ink/10">
           <div className="font-display italic text-[18vw] leading-none tracking-tighter text-ink/[0.04] text-center whitespace-nowrap select-none">
             Anchorfield
           </div>

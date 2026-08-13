@@ -112,7 +112,7 @@ export function SiteNav() {
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-midnight/85 backdrop-blur-xl border-b border-ink/5" : "bg-transparent"
+          scrolled ? "bg-midnight/85 backdrop-blur-xl border-b border-ink/10" : "bg-transparent"
         }`}
       >
         <div className="container-editorial h-20 flex items-center justify-between gap-6">
@@ -301,7 +301,7 @@ function MegaMenu({ item }: { item: NavItem }) {
   const overviewActive = pathname === item.to;
 
   return (
-    <div className="w-screen bg-midnight/95 backdrop-blur-xl border-t border-ink/5 shadow-2xl">
+    <div className="w-screen bg-midnight/95 backdrop-blur-xl border-t border-ink/10 shadow-2xl">
       <div className="container-editorial py-12">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
