@@ -5,13 +5,15 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   ANCHORFIELD — Cinematic Advisory Design System
-   Dark, editorial, financial-advisory. Deep navy + copper gold.
+   ANCHORFIELD — Premium Light Advisory Design System
+   Warm ivory canvas, ink typography, bronze/champagne accent.
+   Aligned to the Anchorfield logo: charcoal architecture,
+   warm taupe, champagne gold linework.
    ============================================================ */
 
 @theme inline {
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: 2px;
@@ -46,41 +48,41 @@
   --color-graphite: var(--graphite);
   --color-copper: var(--copper);
   --color-copper-muted: var(--copper-muted);
-  --color-paper: var(--paper);
+  --color-ink: var(--ink);
   --color-fog: var(--fog);
 }
 
 :root {
-  --radius: 4px;
+  --radius: 2px;
 
-  /* Brand */
-  --midnight: oklch(0.14 0.02 260);        /* #0A0F1C-ish */
-  --navy: oklch(0.19 0.03 258);            /* #0f172a */
-  --graphite: oklch(0.24 0.015 260);       /* #1a1f2c */
-  --copper: oklch(0.74 0.11 70);           /* warm gold #C5A059 */
-  --copper-muted: oklch(0.58 0.08 60);
-  --paper: oklch(0.97 0.005 90);           /* off-white */
-  --fog: oklch(0.86 0.008 260);
+  /* Brand — light palette */
+  --midnight: oklch(0.985 0.004 85);       /* ivory canvas #FBFAF8 */
+  --navy: oklch(0.955 0.008 80);           /* warm sand surface */
+  --graphite: oklch(0.92 0.008 80);        /* muted surface */
+  --copper: oklch(0.58 0.075 72);          /* bronze accent #8C7040 */
+  --copper-muted: oklch(0.78 0.06 78);     /* champagne linework */
+  --ink: oklch(0.19 0.008 265);            /* charcoal text #14161A */
+  --fog: oklch(0.52 0.006 265);            /* secondary text */
 
-  /* Shadcn tokens — mapped to brand for a permanent dark theme */
+  /* Shadcn tokens */
   --background: var(--midnight);
-  --foreground: var(--paper);
-  --card: var(--navy);
-  --card-foreground: var(--paper);
-  --popover: var(--navy);
-  --popover-foreground: var(--paper);
-  --primary: var(--copper);
-  --primary-foreground: var(--midnight);
-  --secondary: var(--graphite);
-  --secondary-foreground: var(--paper);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: oklch(0.99 0.003 85);
+  --secondary: var(--navy);
+  --secondary-foreground: var(--ink);
   --muted: var(--graphite);
-  --muted-foreground: oklch(0.65 0.01 260);
+  --muted-foreground: var(--fog);
   --accent: var(--copper);
-  --accent-foreground: var(--midnight);
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: var(--paper);
-  --border: oklch(1 0 0 / 8%);
-  --input: oklch(1 0 0 / 10%);
+  --accent-foreground: oklch(0.99 0.003 85);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0.003 85);
+  --border: oklch(0.19 0.008 265 / 12%);
+  --input: oklch(0.19 0.008 265 / 16%);
   --ring: var(--copper);
 
   /* Motion */
@@ -88,15 +90,12 @@
 
   /* Gradients / shadows */
   --gradient-fade-bottom: linear-gradient(to bottom, transparent 0%, var(--midnight) 100%);
-  --gradient-hero: radial-gradient(ellipse at top, oklch(0.24 0.05 258 / 0.6), var(--midnight) 70%);
-  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6);
-  --shadow-glow: 0 0 40px -10px oklch(0.74 0.11 70 / 0.3);
+  --shadow-elegant: 0 24px 60px -32px oklch(0.19 0.008 265 / 0.28);
 }
 
 .dark {
-  /* Same tokens — site is dark-mode-first */
   --background: var(--midnight);
-  --foreground: var(--paper);
+  --foreground: var(--ink);
 }
 
 @layer base {
@@ -106,11 +105,10 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  ::selection { background: oklch(0.74 0.11 70 / 0.35); color: var(--paper); }
+  ::selection { background: oklch(0.78 0.06 78 / 0.45); color: var(--ink); }
   h1, h2, h3, h4 { letter-spacing: -0.02em; }
 }
 
@@ -119,9 +117,10 @@
 @utility font-mono-brand { font-family: var(--font-mono); }
 
 @utility text-eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.25em;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--copper);
 }
@@ -135,13 +134,13 @@
   .container-editorial { padding-inline: 2.5rem; }
 }
 
-@utility hairline { background: linear-gradient(to right, transparent, oklch(1 0 0 / 0.15), transparent); height: 1px; }
+@utility hairline { background: linear-gradient(to right, transparent, oklch(0.19 0.008 265 / 0.18), transparent); height: 1px; }
 
 @utility glass-panel {
-  background: oklch(1 0 0 / 0.03);
-  backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid oklch(1 0 0 / 0.08);
+  background: oklch(1 0 0);
+  border: 1px solid oklch(0.19 0.008 265 / 0.1);
 }
+
 
 @utility btn-primary {
   display: inline-flex;
