@@ -121,11 +121,14 @@ export function SiteNav() {
             className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm"
             aria-label="Anchorfield — Home"
           >
-            <div className="relative w-8 h-8 shrink-0" aria-hidden="true">
-              <div className="absolute inset-0 border border-copper rotate-45 group-hover:rotate-[135deg] transition-transform duration-700" />
-              <div className="absolute inset-1.5 bg-copper rounded-full" />
-            </div>
-            <span className="text-sm font-semibold tracking-[0.3em] uppercase">Anchorfield</span>
+            <img
+              src="/logo-anchorfield.png"
+              alt="Anchorfield Buyers Agency"
+              width={877}
+              height={400}
+              className="h-9 md:h-11 w-auto"
+            />
+
           </Link>
 
           {/* Desktop navigation — Radix NavigationMenu (keyboard + ARIA) */}
