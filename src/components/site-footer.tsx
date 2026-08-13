@@ -91,8 +91,8 @@ export function SiteFooter() {
             MELBOURNE — SYDNEY — BRISBANE
           </p>
           <div className="flex justify-end gap-6 text-xs text-ink/40">
-            <Link to="/privacy" className="hover:text-ink">Privacy</Link>
-            <Link to="/terms" className="hover:text-ink">Terms</Link>
+            <a href="/faqs" className="hover:text-ink">Privacy</a>
+            <a href="/faqs" className="hover:text-ink">Terms</a>
             <a href="#" className="hover:text-ink">LinkedIn</a>
           </div>
         </div>
