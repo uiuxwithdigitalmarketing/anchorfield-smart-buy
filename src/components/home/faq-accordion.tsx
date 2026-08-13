@@ -45,7 +45,7 @@ export function FaqAccordion() {
           {FAQS.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div key={i} className="border-t border-white/10 last:border-b">
+              <div key={i} className="border-t border-ink/10 last:border-b">
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full text-left py-8 flex items-start justify-between gap-6 group"
@@ -54,7 +54,7 @@ export function FaqAccordion() {
                   <span className="font-display italic text-2xl md:text-3xl leading-tight group-hover:text-copper transition-colors">
                     {f.q}
                   </span>
-                  <span className="shrink-0 w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:border-copper group-hover:text-copper transition-colors">
+                  <span className="shrink-0 w-10 h-10 rounded-full border border-ink/15 flex items-center justify-center group-hover:border-copper group-hover:text-copper transition-colors">
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </span>
                 </button>
@@ -64,7 +64,7 @@ export function FaqAccordion() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-paper/70 text-lg leading-relaxed max-w-2xl">{f.a}</p>
+                    <p className="text-ink/70 text-lg leading-relaxed max-w-2xl">{f.a}</p>
                   </div>
                 </div>
               </div>

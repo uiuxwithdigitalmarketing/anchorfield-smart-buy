@@ -46,7 +46,7 @@ export function PageHero({
           <div className="w-px h-10 bg-copper animate-line-draw" />
           <span className="text-eyebrow">{eyebrow}</span>
           {chapter && (
-            <span className="ml-auto font-mono-brand text-[10px] text-paper/40 tracking-widest">
+            <span className="ml-auto font-mono-brand text-[10px] text-ink/40 tracking-widest">
               {chapter}
             </span>
           )}
@@ -55,7 +55,7 @@ export function PageHero({
           {title}
         </h1>
         {intro && (
-          <p className="mt-10 text-xl text-paper/70 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
+          <p className="mt-10 text-xl text-ink/70 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
             {intro}
           </p>
         )}

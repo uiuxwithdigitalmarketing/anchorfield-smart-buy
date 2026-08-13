@@ -28,7 +28,7 @@ export function FeaturedAreas() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="grid sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+          <div className="grid sm:grid-cols-2 gap-px bg-ink/5 border border-ink/5">
             {AREAS.map((a) => (
               <button
                 key={a.name}
@@ -39,7 +39,7 @@ export function FeaturedAreas() {
                 <div className="flex justify-between items-start mb-6">
                   <MapPin
                     size={18}
-                    className={a.featured ? "text-copper" : "text-paper/30 group-hover:text-copper"}
+                    className={a.featured ? "text-copper" : "text-ink/30 group-hover:text-copper"}
                   />
                   {a.featured && (
                     <span className="text-[9px] uppercase tracking-widest text-copper font-mono-brand">
@@ -48,7 +48,7 @@ export function FeaturedAreas() {
                   )}
                 </div>
                 <h3 className="font-display italic text-2xl mb-2">{a.name}</h3>
-                <p className="text-xs text-paper/50 uppercase tracking-widest">{a.note}</p>
+                <p className="text-xs text-ink/50 uppercase tracking-widest">{a.note}</p>
               </button>
             ))}
           </div>

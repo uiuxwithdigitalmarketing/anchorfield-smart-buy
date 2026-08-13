@@ -105,14 +105,14 @@ export function SiteNav() {
       {/* Skip link for keyboard users */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-copper focus:text-midnight focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-paper"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-copper focus:text-midnight focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-ink"
       >
         Skip to main content
       </a>
 
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-midnight/85 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
+          scrolled ? "bg-midnight/85 backdrop-blur-xl border-b border-ink/5" : "bg-transparent"
         }`}
       >
         <div className="container-editorial h-20 flex items-center justify-between gap-6">
@@ -148,7 +148,7 @@ export function SiteNav() {
                     <>
                       <NavigationMenu.Trigger
                         className={`group inline-flex items-center gap-1 px-3 py-2 text-[12px] font-medium uppercase tracking-[0.2em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm data-[state=open]:text-copper ${
-                          sectionActive ? "text-copper" : "text-paper/70 hover:text-paper"
+                          sectionActive ? "text-copper" : "text-ink/70 hover:text-ink"
                         }`}
                         aria-current={sectionActive ? "page" : undefined}
                       >
@@ -168,7 +168,7 @@ export function SiteNav() {
                     <NavigationMenu.Link asChild>
                       <Link
                         to={item.to}
-                        className="inline-flex items-center px-3 py-2 text-[12px] font-medium uppercase tracking-[0.2em] text-paper/70 hover:text-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm"
+                        className="inline-flex items-center px-3 py-2 text-[12px] font-medium uppercase tracking-[0.2em] text-ink/70 hover:text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper focus-visible:ring-offset-2 focus-visible:ring-offset-midnight rounded-sm"
                         activeProps={{ className: "!text-copper" }}
                       >
                         {item.label}
@@ -196,7 +196,7 @@ export function SiteNav() {
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="lg:hidden text-paper p-2 -mr-2 min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper rounded-sm"
+                  className="lg:hidden text-ink p-2 -mr-2 min-h-11 min-w-11 inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-copper rounded-sm"
                   aria-label="Open navigation menu"
                 >
                   <Menu size={22} aria-hidden="true" />
@@ -204,10 +204,10 @@ export function SiteNav() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="w-full sm:max-w-md bg-midnight border-white/10 text-paper overflow-y-auto"
+                className="w-full sm:max-w-md bg-midnight border-ink/10 text-ink overflow-y-auto"
               >
                 <SheetHeader className="text-left">
-                  <SheetTitle className="text-eyebrow text-paper/60 font-normal">
+                  <SheetTitle className="text-eyebrow text-ink/60 font-normal">
                     Navigation
                   </SheetTitle>
                   <SheetDescription className="sr-only">
@@ -222,7 +222,7 @@ export function SiteNav() {
                         <AccordionItem
                           key={item.label}
                           value={item.label}
-                          className="border-white/10"
+                          className="border-ink/10"
                         >
                           <AccordionTrigger className="font-display italic text-3xl py-4 hover:no-underline hover:text-copper data-[state=open]:text-copper">
                             {item.label}
@@ -237,7 +237,7 @@ export function SiteNav() {
                             <div className="space-y-6">
                               {item.columns.map((col) => (
                                 <div key={col.heading}>
-                                  <div className="font-mono-brand text-[10px] tracking-widest text-paper/40 uppercase mb-3">
+                                  <div className="font-mono-brand text-[10px] tracking-widest text-ink/40 uppercase mb-3">
                                     {col.heading}
                                   </div>
                                   <ul className="space-y-2">
@@ -246,7 +246,7 @@ export function SiteNav() {
                                         <Link
                                           to={child.to}
                                           params={child.params as never}
-                                          className="block py-2 text-base text-paper/85 hover:text-copper focus-visible:outline-none focus-visible:text-copper min-h-11"
+                                          className="block py-2 text-base text-ink/85 hover:text-copper focus-visible:outline-none focus-visible:text-copper min-h-11"
                                         >
                                           {child.label}
                                         </Link>
@@ -261,7 +261,7 @@ export function SiteNav() {
                       ) : (
                         <div
                           key={item.label}
-                          className="border-b border-white/10"
+                          className="border-b border-ink/10"
                         >
                           <Link
                             to={item.to}
@@ -301,7 +301,7 @@ function MegaMenu({ item }: { item: NavItem }) {
   const overviewActive = pathname === item.to;
 
   return (
-    <div className="w-screen bg-midnight/95 backdrop-blur-xl border-t border-white/5 shadow-2xl">
+    <div className="w-screen bg-midnight/95 backdrop-blur-xl border-t border-ink/5 shadow-2xl">
       <div className="container-editorial py-12">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
@@ -323,7 +323,7 @@ function MegaMenu({ item }: { item: NavItem }) {
               key={col.heading}
               className={item.columns!.length === 3 ? "col-span-3" : "col-span-4"}
             >
-              <div className="font-mono-brand text-[10px] tracking-widest text-paper/40 uppercase mb-4">
+              <div className="font-mono-brand text-[10px] tracking-widest text-ink/40 uppercase mb-4">
                 {col.heading}
               </div>
               <ul className="space-y-3">
@@ -351,7 +351,7 @@ function MegaMenu({ item }: { item: NavItem }) {
                             className={`text-sm transition-colors ${
                               isActive
                                 ? "text-copper"
-                                : "text-paper/85 group-hover:text-copper"
+                                : "text-ink/85 group-hover:text-copper"
                             }`}
                           >
                             {child.label}
@@ -359,7 +359,7 @@ function MegaMenu({ item }: { item: NavItem }) {
                           {child.desc && (
                             <div
                               className={`text-xs mt-0.5 ${
-                                isActive ? "text-copper/60" : "text-paper/40"
+                                isActive ? "text-copper/60" : "text-ink/40"
                               }`}
                             >
                               {child.desc}

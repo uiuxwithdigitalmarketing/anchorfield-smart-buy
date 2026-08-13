@@ -77,11 +77,11 @@ function BlogPost() {
       <article className="pb-24">
         <div className="container-editorial max-w-3xl">
           {post.body.map((p: string, i: number) => (
-            <p key={i} className={`text-paper/80 leading-relaxed mb-6 ${i === 0 ? "text-xl md:text-2xl font-display italic text-paper" : "text-lg"}`}>
+            <p key={i} className={`text-ink/80 leading-relaxed mb-6 ${i === 0 ? "text-xl md:text-2xl font-display italic text-ink" : "text-lg"}`}>
               {p}
             </p>
           ))}
-          <div className="mt-16 pt-8 border-t border-white/10">
+          <div className="mt-16 pt-8 border-t border-ink/10">
             <Link to="/blog" className="link-underline text-eyebrow">← All insights</Link>
           </div>
         </div>

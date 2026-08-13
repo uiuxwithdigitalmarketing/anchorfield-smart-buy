@@ -20,7 +20,7 @@ const T = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-32 md:py-48 bg-navy/40 border-y border-white/5">
+    <section className="py-32 md:py-48 bg-navy/40 border-y border-ink/5">
       <div className="container-editorial">
         <SectionHeader
           eyebrow="(08) Client Record"
@@ -40,13 +40,13 @@ export function TestimonialsSection() {
             >
               <div>
                 <div className="font-display italic text-5xl text-copper leading-none mb-6">"</div>
-                <blockquote className="text-lg leading-relaxed text-paper/85 text-pretty">
+                <blockquote className="text-lg leading-relaxed text-ink/85 text-pretty">
                   {t.q}
                 </blockquote>
               </div>
-              <figcaption className="mt-10 pt-6 border-t border-white/10">
+              <figcaption className="mt-10 pt-6 border-t border-ink/10">
                 <div className="text-sm font-medium">{t.name}</div>
-                <div className="text-xs text-paper/50 uppercase tracking-widest mt-1">
+                <div className="text-xs text-ink/50 uppercase tracking-widest mt-1">
                   {t.role}
                 </div>
               </figcaption>

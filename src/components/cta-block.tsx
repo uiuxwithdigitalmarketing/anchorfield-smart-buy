@@ -31,7 +31,7 @@ export function CtaBlock({
             i === arr.length - 2 ? <span key={i} className="italic text-copper">{w} </span> : w + " "
           )}
         </h2>
-        <p className="text-xl text-paper/60 max-w-xl mx-auto leading-relaxed mb-12">
+        <p className="text-xl text-ink/60 max-w-xl mx-auto leading-relaxed mb-12">
           {intro}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">

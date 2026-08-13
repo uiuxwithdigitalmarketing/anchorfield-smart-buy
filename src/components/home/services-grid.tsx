@@ -15,7 +15,7 @@ const SERVICES = [
 
 export function ServicesGrid() {
   return (
-    <section className="py-32 md:py-48 bg-navy/30 border-y border-white/5">
+    <section className="py-32 md:py-48 bg-navy/30 border-y border-ink/5">
       <div className="container-editorial">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
           <SectionHeader
@@ -32,7 +32,7 @@ export function ServicesGrid() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-ink/5 border border-ink/5">
           {SERVICES.map((s) => (
             <Link
               key={s.slug}
@@ -46,14 +46,14 @@ export function ServicesGrid() {
                 </div>
                 <ArrowUpRight
                   size={18}
-                  className="text-paper/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all"
+                  className="text-ink/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all"
                 />
               </div>
               <div>
                 <h3 className="font-display text-2xl italic mb-3 leading-tight">
                   {s.title}
                 </h3>
-                <p className="text-sm text-paper/50 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-ink/50 leading-relaxed">{s.desc}</p>
                 <div className="h-px w-0 bg-copper mt-6 group-hover:w-full transition-all duration-700" />
               </div>
             </Link>
