@@ -7,7 +7,7 @@ const STATS = [
 
 export function StatsRibbon() {
   return (
-    <section className="relative border-y border-ink/10 bg-navy/40 backdrop-blur">
+    <section className="relative border-y border-ink/10 bg-navy/70">
       <div className="container-editorial grid grid-cols-2 lg:grid-cols-4">
         {STATS.map((s, i) => (
           <div

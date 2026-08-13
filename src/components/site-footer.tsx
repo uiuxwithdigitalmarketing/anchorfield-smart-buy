@@ -36,7 +36,7 @@ const COLS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-midnight border-t border-ink/10 pt-24 pb-10">
+    <footer className="bg-navy border-t border-ink/10 pt-24 pb-10">
       <div className="container-editorial">
         {/* Big brand mark */}
         <div className="grid lg:grid-cols-12 gap-16 mb-20">
@@ -45,7 +45,7 @@ export function SiteFooter() {
             <h3 className="font-display italic text-4xl md:text-5xl leading-[1.05] mb-8">
               Institutional-grade insights, delivered to Australia's most discerning buyers.
             </h3>
-            <form className="flex border-b border-ink/15 max-w-md pb-2">
+            <form className="flex border-b border-ink/25 max-w-md pb-2">
               <input
                 type="email"
                 required
@@ -78,7 +78,7 @@ export function SiteFooter() {
 
         {/* Massive wordmark */}
         <div className="relative overflow-hidden py-8 mb-8 border-y border-ink/10">
-          <div className="font-display italic text-[18vw] leading-none tracking-tighter text-ink/[0.04] text-center whitespace-nowrap select-none">
+          <div className="font-display italic text-[18vw] leading-none tracking-tighter text-ink/[0.06] text-center whitespace-nowrap select-none">
             Anchorfield
           </div>
         </div>

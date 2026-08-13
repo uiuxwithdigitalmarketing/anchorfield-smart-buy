@@ -20,9 +20,9 @@ export function CtaBlock({
           src={ctaImage}
           alt=""
           loading="lazy"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-[0.14] grayscale"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight via-midnight/70 to-midnight" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       </div>
       <div className="container-editorial text-center">
         <div className="text-eyebrow mb-8">{eyebrow}</div>
@@ -31,7 +31,7 @@ export function CtaBlock({
             i === arr.length - 2 ? <span key={i} className="italic text-copper">{w} </span> : w + " "
           )}
         </h2>
-        <p className="text-xl text-ink/60 max-w-xl mx-auto leading-relaxed mb-12">
+        <p className="text-xl text-ink/65 max-w-xl mx-auto leading-relaxed mb-12">
           {intro}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">

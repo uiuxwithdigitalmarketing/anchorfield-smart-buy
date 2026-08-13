@@ -16,9 +16,9 @@ export function TrustStrip() {
             {CREDENTIALS.map((c) => (
               <div
                 key={c}
-                className="bg-midnight aspect-[3/2] flex items-center justify-center group hover:bg-navy transition-colors"
+                className="bg-background aspect-[3/2] flex items-center justify-center group hover:bg-navy transition-colors"
               >
-                <span className="font-display italic text-lg text-ink/40 group-hover:text-copper transition-colors">
+                <span className="font-display italic text-lg text-ink/45 group-hover:text-copper transition-colors">
                   {c}
                 </span>
               </div>
