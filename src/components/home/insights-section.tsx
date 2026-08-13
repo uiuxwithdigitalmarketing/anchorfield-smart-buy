@@ -45,7 +45,7 @@ export function InsightsSection() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+        <div className="grid md:grid-cols-3 gap-px bg-ink/5 border border-ink/10">
           {POSTS.map((p) => (
             <Link
               key={p.slug}
@@ -54,18 +54,18 @@ export function InsightsSection() {
               className="group bg-midnight p-8 lg:p-10 hover:bg-navy transition-colors"
             >
               <div className="flex justify-between items-start mb-16">
-                <div className="font-mono-brand text-[10px] tracking-widest uppercase text-paper/50">
+                <div className="font-mono-brand text-[10px] tracking-widest uppercase text-ink/50">
                   {p.tag} — {p.date}
                 </div>
                 <ArrowUpRight
                   size={18}
-                  className="text-paper/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all"
+                  className="text-ink/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all"
                 />
               </div>
               <h3 className="font-display italic text-2xl lg:text-3xl leading-tight mb-8 text-balance group-hover:text-copper transition-colors">
                 {p.title}
               </h3>
-              <div className="text-xs text-paper/40 uppercase tracking-widest">{p.read}</div>
+              <div className="text-xs text-ink/40 uppercase tracking-widest">{p.read}</div>
             </Link>
           ))}
         </div>

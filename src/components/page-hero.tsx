@@ -21,44 +21,40 @@ export function PageHero({
   imagePosition = "center",
 }: Props) {
   return (
-    <section className="relative isolate pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
-      {/* Background image + cinematic overlays */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={backgroundImage}
-          alt={imageAlt}
-          aria-hidden={imageAlt === "" ? "true" : undefined}
-          width={1920}
-          height={1080}
-          className="w-full h-full object-cover brightness-125 contrast-[1.05]"
-          style={{ objectPosition: imagePosition }}
-        />
-        {/* Subtle vertical fade — keeps text readable without hiding the photo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/45 via-midnight/25 to-midnight/75" />
-        {/* Left vignette holds copy against imagery while letting the image breathe */}
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-midnight/20 to-transparent" />
-        {/* Copper glow accent */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[1200px] h-[600px] rounded-full bg-copper/[0.08] blur-[120px]" />
-      </div>
-
-      <div className="container-editorial relative z-10">
+    <section className="relative pt-36 lg:pt-44 pb-0 bg-navy/60 border-b border-ink/10">
+      <div className="container-editorial">
         <div className="flex items-center gap-4 mb-8 animate-fade">
-          <div className="w-px h-10 bg-copper animate-line-draw" />
+          <div className="w-8 h-px bg-copper" />
           <span className="text-eyebrow">{eyebrow}</span>
           {chapter && (
-            <span className="ml-auto font-mono-brand text-[10px] text-paper/40 tracking-widest">
+            <span className="ml-auto font-mono-brand text-[10px] text-ink/40 tracking-widest">
               {chapter}
             </span>
           )}
         </div>
-        <h1 className="font-display text-5xl md:text-7xl lg:text-[7.5rem] leading-[0.98] tracking-tight text-balance max-w-5xl animate-reveal">
+
+        <h1 className="font-display text-5xl md:text-7xl lg:text-[6.5rem] leading-[1] tracking-tight text-balance max-w-5xl animate-reveal">
           {title}
         </h1>
+
         {intro && (
-          <p className="mt-10 text-xl text-paper/70 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
+          <p className="mt-8 text-lg md:text-xl text-ink/65 max-w-2xl leading-relaxed text-pretty animate-reveal [animation-delay:150ms]">
             {intro}
           </p>
         )}
+
+        <div className="mt-14 lg:mt-20 relative aspect-[16/7] overflow-hidden animate-fade">
+          <img
+            src={backgroundImage}
+            alt={imageAlt}
+            aria-hidden={imageAlt === "" ? "true" : undefined}
+            width={1920}
+            height={840}
+            loading="eager"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: imagePosition }}
+          />
+        </div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ function About() {
         intro="Anchorfield exists to close the gap between finance and real estate — bringing the discipline of institutional capital allocation to the intensely personal act of buying a home."
       />
 
-      <section className="py-24 md:py-32 border-t border-white/5">
+      <section className="py-24 md:py-32 border-t border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
             <div className="text-eyebrow mb-6">Our story</div>
@@ -48,7 +48,7 @@ function About() {
               A mortgage legacy meets strategic acquisition.
             </h2>
           </div>
-          <div className="lg:col-span-7 space-y-6 text-lg text-paper/70 leading-relaxed">
+          <div className="lg:col-span-7 space-y-6 text-lg text-ink/70 leading-relaxed">
             <p>
               For over a decade, our founder structured complex mortgages for
               high-net-worth Australians. He witnessed, again and again, how
@@ -72,18 +72,18 @@ function About() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-navy/30 border-y border-white/5">
+      <section className="py-24 md:py-32 bg-navy/30 border-y border-ink/10">
         <div className="container-editorial">
           <div className="text-eyebrow mb-6">Values</div>
           <h2 className="font-display text-4xl md:text-5xl italic leading-[1.05] mb-16 max-w-2xl">
             Four principles that govern every engagement.
           </h2>
-          <div className="grid md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+          <div className="grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/10">
             {VALUES.map((v) => (
               <div key={v.n} className="bg-midnight p-10">
                 <div className="font-mono-brand text-copper text-xs mb-6">{v.n}</div>
                 <h3 className="font-display italic text-3xl mb-4">{v.t}</h3>
-                <p className="text-paper/60 leading-relaxed">{v.d}</p>
+                <p className="text-ink/60 leading-relaxed">{v.d}</p>
               </div>
             ))}
           </div>

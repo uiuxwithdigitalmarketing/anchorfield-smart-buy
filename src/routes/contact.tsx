@@ -26,7 +26,7 @@ function Contact() {
         intro="45 minutes with an Anchorfield advisor. Confidential, no obligation, and often the most valuable property conversation our clients have had."
       />
 
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           {/* Form */}
           <form className="lg:col-span-7 space-y-6" onSubmit={(e) => { e.preventDefault(); alert("Thanks — we'll be in touch within one business day."); }}>
@@ -38,7 +38,7 @@ function Contact() {
             <Field label="Phone" name="phone" type="tel" />
             <div>
               <label className="text-eyebrow block mb-3">Buyer profile</label>
-              <select className="w-full bg-transparent border-b border-white/15 py-3 focus:outline-none focus:border-copper text-paper">
+              <select className="w-full bg-transparent border-b border-ink/15 py-3 focus:outline-none focus:border-copper text-ink">
                 <option className="bg-midnight">Owner-occupier</option>
                 <option className="bg-midnight">Investor</option>
                 <option className="bg-midnight">First home buyer</option>
@@ -52,7 +52,7 @@ function Contact() {
               <textarea
                 rows={5}
                 placeholder="Budget, target suburbs, timeline, and any specific goals."
-                className="w-full bg-transparent border-b border-white/15 py-3 focus:outline-none focus:border-copper text-paper resize-none placeholder:text-paper/30"
+                className="w-full bg-transparent border-b border-ink/15 py-3 focus:outline-none focus:border-copper text-ink resize-none placeholder:text-ink/30"
               />
             </div>
             <button type="submit" className="btn-primary mt-6">
@@ -61,7 +61,7 @@ function Contact() {
           </form>
 
           {/* Contact detail */}
-          <aside className="lg:col-span-5 space-y-10 lg:pl-12 lg:border-l border-white/5">
+          <aside className="lg:col-span-5 space-y-10 lg:pl-12 lg:border-l border-ink/10">
             <div>
               <div className="text-eyebrow mb-4">Direct</div>
               <div className="space-y-4">
@@ -108,7 +108,7 @@ function Field({ label, name, type = "text", required = false }: { label: string
         type={type}
         name={name}
         required={required}
-        className="w-full bg-transparent border-b border-white/15 py-3 focus:outline-none focus:border-copper text-paper"
+        className="w-full bg-transparent border-b border-ink/15 py-3 focus:outline-none focus:border-copper text-ink"
       />
     </div>
   );

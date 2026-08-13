@@ -30,7 +30,7 @@ export const Route = createFileRoute("/blog")({
         intro="Market reports, buyer briefings, and guides. Written for readers who prefer signal to noise."
       />
       <section className="pb-24">
-        <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border-y border-x border-white/5">
+        <div className="container-editorial grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border-y border-x border-ink/10">
           {POSTS.map((p) => (
             <Link
               key={p.slug}
@@ -40,17 +40,17 @@ export const Route = createFileRoute("/blog")({
             >
               <div>
                 <div className="flex justify-between items-start mb-12">
-                  <div className="font-mono-brand text-[10px] tracking-widest uppercase text-paper/50">
+                  <div className="font-mono-brand text-[10px] tracking-widest uppercase text-ink/50">
                     {p.tag} — {p.date}
                   </div>
-                  <ArrowUpRight size={18} className="text-paper/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
+                  <ArrowUpRight size={18} className="text-ink/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all" />
                 </div>
                 <h3 className="font-display italic text-2xl md:text-3xl leading-tight mb-6 text-balance group-hover:text-copper transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-sm text-paper/60 leading-relaxed line-clamp-3">{p.excerpt}</p>
+                <p className="text-sm text-ink/60 leading-relaxed line-clamp-3">{p.excerpt}</p>
               </div>
-              <div className="text-xs text-paper/40 uppercase tracking-widest mt-8 pt-6 border-t border-white/10">
+              <div className="text-xs text-ink/40 uppercase tracking-widest mt-8 pt-6 border-t border-ink/10">
                 {p.read} read
               </div>
             </Link>

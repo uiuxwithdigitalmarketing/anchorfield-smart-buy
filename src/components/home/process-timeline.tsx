@@ -24,7 +24,7 @@ export function ProcessTimeline() {
         />
 
         <div className="mt-20 relative">
-          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-white/10" />
+          <div className="hidden lg:block absolute top-8 left-0 right-0 h-px bg-ink/10" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4 relative">
             {STEPS.map((s, i) => (
               <div key={s.n} className="relative group">
@@ -40,11 +40,11 @@ export function ProcessTimeline() {
                     <h3 className="font-display italic text-2xl lg:text-3xl mb-3 leading-tight">
                       {s.title}
                     </h3>
-                    <p className="text-sm text-paper/60 leading-relaxed">{s.desc}</p>
+                    <p className="text-sm text-ink/60 leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
                 {i < STEPS.length - 1 && (
-                  <div className="lg:hidden ml-2 mt-4 h-8 w-px bg-white/10" />
+                  <div className="lg:hidden ml-2 mt-4 h-8 w-px bg-ink/10" />
                 )}
               </div>
             ))}

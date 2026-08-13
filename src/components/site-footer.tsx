@@ -36,23 +36,31 @@ const COLS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-midnight border-t border-white/5 pt-24 pb-10">
+    <footer className="bg-navy border-t border-ink/10 pt-24 pb-10">
       <div className="container-editorial">
         {/* Big brand mark */}
         <div className="grid lg:grid-cols-12 gap-16 mb-20">
           <div className="lg:col-span-5">
+            <img
+              src="/logo-anchorfield.png"
+              alt="Anchorfield Buyers Agency"
+              width={523}
+              height={360}
+              loading="lazy"
+              className="h-16 w-auto mb-10 mix-blend-multiply"
+            />
             <div className="text-eyebrow mb-8">The Market Report — Quarterly</div>
             <h3 className="font-display italic text-4xl md:text-5xl leading-[1.05] mb-8">
               Institutional-grade insights, delivered to Australia's most discerning buyers.
             </h3>
-            <form className="flex border-b border-white/15 max-w-md pb-2">
+            <form className="flex border-b border-ink/25 max-w-md pb-2">
               <input
                 type="email"
                 required
                 placeholder="Your email address"
-                className="bg-transparent flex-1 py-2 text-sm placeholder:text-paper/40 focus:outline-none"
+                className="bg-transparent flex-1 py-2 text-sm placeholder:text-ink/40 focus:outline-none"
               />
-              <button className="text-eyebrow flex items-center gap-2 hover:text-paper transition-colors">
+              <button className="text-eyebrow flex items-center gap-2 hover:text-ink transition-colors">
                 Subscribe <ArrowUpRight size={14} />
               </button>
             </form>
@@ -65,7 +73,7 @@ export function SiteFooter() {
                 <ul className="space-y-4">
                   {col.links.map((l) => (
                     <li key={l.to + l.label}>
-                      <Link to={l.to} className="text-sm text-paper/70 hover:text-copper transition-colors">
+                      <Link to={l.to} className="text-sm text-ink/70 hover:text-copper transition-colors">
                         {l.label}
                       </Link>
                     </li>
@@ -77,23 +85,23 @@ export function SiteFooter() {
         </div>
 
         {/* Massive wordmark */}
-        <div className="relative overflow-hidden py-8 mb-8 border-y border-white/5">
-          <div className="font-display italic text-[18vw] leading-none tracking-tighter text-paper/[0.04] text-center whitespace-nowrap select-none">
+        <div className="relative overflow-hidden py-8 mb-8 border-y border-ink/10">
+          <div className="font-display italic text-[18vw] leading-none tracking-tighter text-ink/[0.06] text-center whitespace-nowrap select-none">
             Anchorfield
           </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 items-center">
-          <p className="text-xs text-paper/40 font-mono-brand">
+          <p className="text-xs text-ink/40 font-mono-brand">
             © {new Date().getFullYear()} Anchorfield Advisory Pty Ltd
           </p>
-          <p className="text-xs text-paper/40 text-center font-mono-brand tracking-widest">
+          <p className="text-xs text-ink/40 text-center font-mono-brand tracking-widest">
             MELBOURNE — SYDNEY — BRISBANE
           </p>
-          <div className="flex justify-end gap-6 text-xs text-paper/40">
-            <Link to="/privacy" className="hover:text-paper">Privacy</Link>
-            <Link to="/terms" className="hover:text-paper">Terms</Link>
-            <a href="#" className="hover:text-paper">LinkedIn</a>
+          <div className="flex justify-end gap-6 text-xs text-ink/40">
+            <a href="/faqs" className="hover:text-ink">Privacy</a>
+            <a href="/faqs" className="hover:text-ink">Terms</a>
+            <a href="#" className="hover:text-ink">LinkedIn</a>
           </div>
         </div>
       </div>

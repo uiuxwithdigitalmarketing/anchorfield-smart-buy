@@ -4,69 +4,70 @@ import heroImage from "@/assets/hero-melbourne.jpg";
 
 export function HeroSection() {
   return (
-    <section className="relative isolate min-h-dvh flex items-end overflow-hidden pt-32 pb-16">
-      {/* Backdrop imagery */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Melbourne skyline at dusk"
-          fetchPriority="high"
-          className="w-full h-full object-cover scale-105 brightness-125 contrast-[1.05]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-midnight/55 via-midnight/35 to-midnight" />
-        <div className="absolute inset-0 bg-gradient-to-r from-midnight/70 via-transparent to-transparent" />
-      </div>
-
-      <div className="container-editorial relative z-10 grid lg:grid-cols-12 gap-8 items-end">
-        {/* Left: Chapter mark + headline */}
-        <div className="lg:col-span-8">
-          <div className="flex items-center gap-4 mb-8 animate-fade">
-            <div className="w-px h-16 bg-copper animate-line-draw" />
-            <div>
-              <div className="text-eyebrow">Est. 2024 — Melbourne</div>
-              <div className="font-mono-brand text-[10px] text-paper/40 tracking-widest mt-1">
-                CHAPTER 01 / THE PREMISE
-              </div>
+    <section className="relative isolate pt-32 lg:pt-40 pb-0 overflow-hidden">
+      <div className="container-editorial">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+          {/* Copy */}
+          <div className="lg:col-span-7 pb-8 lg:pb-24">
+            <div className="flex items-center gap-4 mb-8 animate-fade">
+              <div className="w-8 h-px bg-copper" />
+              <div className="text-eyebrow">Built on trust, backed by insight</div>
             </div>
+
+            <h1 className="font-display text-[clamp(2.75rem,7vw,6.5rem)] leading-[0.98] tracking-tight text-balance animate-reveal">
+              Property, <br />
+              acquired{" "}
+              <span className="italic text-copper">intelligently.</span>
+            </h1>
+
+            <p className="mt-8 text-lg md:text-xl text-ink/65 max-w-xl leading-relaxed animate-reveal [animation-delay:150ms]">
+              Anchorfield is Australia's financial-grade buyer's advocacy — combining
+              seven years of mortgage expertise with disciplined property acquisition.
+              No emotion. No conflicts. Just the numbers.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4 animate-reveal [animation-delay:300ms]">
+              <Link to="/contact" className="btn-primary">
+                Book Consultation <ArrowRight size={14} />
+              </Link>
+              <a href="tel:1300000000" className="btn-ghost">
+                <Phone size={14} /> Call Now
+              </a>
+            </div>
+
+            <dl className="mt-14 grid grid-cols-3 gap-6 max-w-lg border-t border-ink/10 pt-8 animate-reveal [animation-delay:450ms]">
+              {[
+                { v: "7 yrs", l: "Mortgage broking" },
+                { v: "30%", l: "Stock never listed" },
+                { v: "$1.2B+", l: "Assets advised" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <dt className="font-display text-2xl md:text-3xl text-copper">{s.v}</dt>
+                  <dd className="mt-1 text-[11px] uppercase tracking-[0.18em] text-ink/45">
+                    {s.l}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
-          <h1 className="font-display text-[clamp(3rem,9vw,9.5rem)] leading-[0.92] tracking-tight text-balance animate-reveal">
-            Property, <br />
-            <span className="italic text-paper/70">acquired</span>{" "}
-            <span className="italic text-copper">intelligently.</span>
-          </h1>
-
-          <p className="mt-10 text-lg md:text-xl text-paper/70 max-w-xl leading-relaxed animate-reveal [animation-delay:200ms]">
-            Anchorfield is Australia's next-generation buyer's advocacy — combining
-            institutional mortgage expertise with disciplined property acquisition.
-            No emotion. No conflicts. Just financial intelligence.
-          </p>
-
-          <div className="mt-12 flex flex-wrap gap-4 animate-reveal [animation-delay:400ms]">
-            <Link to="/contact" className="btn-primary">
-              Book Consultation <ArrowRight size={14} />
-            </Link>
-            <a href="tel:1300000000" className="btn-ghost">
-              <Phone size={14} /> Call Now
-            </a>
+          {/* Imagery */}
+          <div className="lg:col-span-5 relative animate-fade">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={heroImage}
+                alt="Premium Australian residential architecture at dusk"
+                fetchPriority="high"
+                width={1200}
+                height={1500}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <figcaption className="mt-4 font-mono-brand text-[10px] tracking-widest text-ink/40 uppercase">
+              Melbourne — Sydney — Brisbane
+            </figcaption>
           </div>
         </div>
-
-        {/* Right: Meta card */}
-        <aside className="lg:col-span-4 animate-reveal [animation-delay:600ms]">
-          <div className="glass-panel rounded-sm p-8">
-            <div className="text-eyebrow mb-4">Client Brief</div>
-            <p className="font-display italic text-2xl leading-snug mb-6 text-balance">
-              "Property buying should be driven by financial intelligence, not emotion."
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-px bg-copper" />
-              <span className="text-xs text-paper/60 uppercase tracking-widest">
-                The Anchorfield Doctrine
-              </span>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
   );

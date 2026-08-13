@@ -63,13 +63,13 @@ function Services() {
       />
 
       {GROUPS.map((g) => (
-        <section key={g.title} className="py-20 border-t border-white/5">
+        <section key={g.title} className="py-20 border-t border-ink/10">
           <div className="container-editorial">
             <div className="flex items-baseline justify-between mb-12">
               <h2 className="font-display italic text-3xl md:text-4xl">{g.title}</h2>
               <div className="text-eyebrow">{g.items.length} services</div>
             </div>
-            <div className="grid md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+            <div className="grid md:grid-cols-2 gap-px bg-ink/5 border border-ink/10">
               {g.items.map((s) => (
                 <Link
                   key={s.slug}
@@ -79,11 +79,11 @@ function Services() {
                 >
                   <div>
                     <h3 className="font-display italic text-2xl mb-3">{s.name}</h3>
-                    <p className="text-paper/60 text-sm leading-relaxed">{s.desc}</p>
+                    <p className="text-ink/60 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                   <ArrowUpRight
                     size={20}
-                    className="text-paper/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all shrink-0"
+                    className="text-ink/30 group-hover:text-copper group-hover:-translate-y-1 group-hover:translate-x-1 transition-all shrink-0"
                   />
                 </Link>
               ))}

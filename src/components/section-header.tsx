@@ -15,7 +15,7 @@ export function SectionHeader({ eyebrow, title, intro, align = "left", className
       <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-balance mb-6">
         {title}
       </h2>
-      {intro && <p className="text-lg text-paper/60 leading-relaxed text-pretty max-w-2xl">{intro}</p>}
+      {intro && <p className="text-lg text-ink/60 leading-relaxed text-pretty max-w-2xl">{intro}</p>}
     </div>
   );
 }

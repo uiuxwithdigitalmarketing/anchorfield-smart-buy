@@ -236,7 +236,7 @@ function ServiceDetail() {
         intro={data.intro}
       />
 
-      <section className="py-24 border-t border-white/5">
+      <section className="py-24 border-t border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
             <div className="text-eyebrow mb-6">Overview</div>
@@ -244,13 +244,13 @@ function ServiceDetail() {
               {data.overview.split(".")[0]}.
             </p>
           </div>
-          <div className="lg:col-span-7 text-lg text-paper/70 leading-relaxed">
+          <div className="lg:col-span-7 text-lg text-ink/70 leading-relaxed">
             <p>{data.overview}</p>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-navy/30 border-y border-white/5">
+      <section className="py-24 bg-navy/30 border-y border-ink/10">
         <div className="container-editorial grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
             <div className="text-eyebrow mb-6">Client benefits</div>
@@ -260,9 +260,9 @@ function ServiceDetail() {
           </div>
           <div className="lg:col-span-8 space-y-4">
             {data.benefits.map((b: string, i: number) => (
-              <div key={i} className="flex items-start gap-4 py-5 border-b border-white/10">
+              <div key={i} className="flex items-start gap-4 py-5 border-b border-ink/10">
                 <Check size={18} className="text-copper shrink-0 mt-1" />
-                <span className="text-lg text-paper/85">{b}</span>
+                <span className="text-lg text-ink/85">{b}</span>
               </div>
             ))}
           </div>
@@ -275,12 +275,12 @@ function ServiceDetail() {
           <h2 className="font-display italic text-4xl md:text-5xl leading-[1.05] mb-16">
             How it works.
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/5 border border-ink/10">
             {data.process.map((p: {n: string; t: string; d: string}) => (
               <div key={p.n} className="bg-midnight p-8">
                 <div className="font-mono-brand text-copper text-xs mb-6">STEP {p.n}</div>
                 <h3 className="font-display italic text-2xl mb-3">{p.t}</h3>
-                <p className="text-paper/60 text-sm leading-relaxed">{p.d}</p>
+                <p className="text-ink/60 text-sm leading-relaxed">{p.d}</p>
               </div>
             ))}
           </div>
