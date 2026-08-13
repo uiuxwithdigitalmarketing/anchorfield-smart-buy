@@ -12,9 +12,11 @@
    ============================================================ */
 
 @theme inline {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-serif-editorial: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
 
   --radius-sm: 2px;
   --radius-md: 4px;
