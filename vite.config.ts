@@ -13,10 +13,10 @@ export default defineConfig({
     spa: {
       enabled: true,
       prerender: {
-        outputPath: "/index.html",
+        outputPath: "/_shell.html",
         retryCount: 3,
         retryDelay: 1000,
-        failOnError: false,
+        failOnError: true,
       },
     },
   },
