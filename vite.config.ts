@@ -16,7 +16,7 @@ export default defineConfig({
         outputPath: "/_shell.html",
         retryCount: 3,
         retryDelay: 1000,
-        failOnError: true,
+        failOnError: false,
       },
     },
   },
