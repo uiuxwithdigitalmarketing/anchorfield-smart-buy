@@ -13,10 +13,11 @@ export default defineConfig({
     spa: {
       enabled: true,
       prerender: {
-        outputPath: "/_shell.html",
+        // GitHub Pages needs the SPA shell at the site's entry point.
+        outputPath: "/index.html",
         retryCount: 3,
         retryDelay: 1000,
-        failOnError: false,
+        failOnError: true,
       },
     },
   },
