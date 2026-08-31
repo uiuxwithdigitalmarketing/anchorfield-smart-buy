@@ -1,0 +1,39 @@
+/*
+Theme Name: Anchorfield
+Theme URI: https://uiuxwithdigitalmarketing.github.io/anchorfield-smart-buy-demo/
+Author: Anchorfield
+Description: Custom WordPress theme foundation for the Anchorfield Buyers Agency website, designed for Elementor-compatible page editing.
+Version: 0.1.0
+Text Domain: anchorfield
+*/
+
+/* Design-system foundation. The production CSS will be ported from the React application. */
+:root {
+  --af-midnight: #FBFAF8;
+  --af-navy: #F2F0EB;
+  --af-graphite: #E7E4DE;
+  --af-copper: #8C7040;
+  --af-copper-muted: #CDBD9D;
+  --af-ink: #14161A;
+  --af-fog: #77797D;
+  --af-max-width: 1360px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--af-midnight);
+  color: var(--af-ink);
+  font-family: "Jost", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.af-container {
+  width: min(100% - 3rem, var(--af-max-width));
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .af-container { width: min(100% - 5rem, var(--af-max-width)); }
+}
