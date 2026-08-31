@@ -8,8 +8,20 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
+    // Generate real HTML files for every reachable page during the build.
+    // This is required for deployment to ordinary Apache/WordPress hosting,
+    // where /about, /contact, /blog, etc. cannot be handled by a running
+    // TanStack server.
+    prerender: {
+      enabled: true,
+      autoSubfolderIndex: true,
+      autoStaticPathsDiscovery: true,
+      crawlLinks: true,
+      failOnError: true,
+      retryCount: 2,
+    },
+
+    // Keep the existing TanStack Start server entry for the normal Start build.
     server: { entry: "server" },
   },
 });
