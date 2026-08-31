@@ -1,17 +1,12 @@
 <?php
-/**
- * Front page shell. The Home page content remains editable with Elementor.
- */
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+/** Anchorfield homepage. */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 get_header();
 ?>
 <main id="main-content" class="site-main">
-    <?php while ( have_posts() ) : the_post(); ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <?php the_content(); ?>
-        </article>
-    <?php endwhile; ?>
+    <?php get_template_part( 'parts/home/hero' ); ?>
+    <?php while ( have_posts() ) : the_post(); if ( trim( get_the_content() ) ) : ?>
+        <section class="af-elementor-content af-container"><?php the_content(); ?></section>
+    <?php endif; endwhile; ?>
 </main>
 <?php get_footer(); ?>
